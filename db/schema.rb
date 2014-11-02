@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141101204030) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "productos", force: true do |t|
     t.date     "fecha"
     t.string   "titulo"

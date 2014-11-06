@@ -38,7 +38,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
 #gem 'bootstrap_form'#Borrarla si no la uso, tuve problemas pq ponia las cosas de cualquier tamaño, fijarse si se puede acomadar eso sino
 gem 'carrierwave'#Gema para cargar imageness
 gem 'sunspot_rails' #Gema para realizar busquuedas, buscar en railscast.com para aprender a usar
 
+gem 'devise'

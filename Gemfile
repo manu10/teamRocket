@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3',group: :development
 gem 'pg', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -38,3 +38,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+#gem 'bootstrap_form'#Borrarla si no la uso, tuve problemas pq ponia las cosas de cualquier tamaño, fijarse si se puede acomadar eso sino
+gem 'carrierwave'#Gema para cargar imageness
+gem 'sunspot_rails' #Gema para realizar busquuedas, buscar en railscast.com para aprender a usar
+

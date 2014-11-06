@@ -4,12 +4,18 @@ class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
-    @productos = Producto.all
+   @productos = Producto.all
   end
 
   # GET /productos/1
   # GET /productos/1.json
   def show
+
+  end
+
+  def show_recent
+    @productos= Producto.recientes
+
   end
 
   # GET /productos/new

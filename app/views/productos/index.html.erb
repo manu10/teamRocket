@@ -1,4 +1,28 @@
-<h1>Subastas Vigentes(Por ahora son todas XD)</h1>
+
+<% if @productos.size==0 %>
+<h1>NO HAY SUBASTAS :'(</h1>
+        
+      <% else %>
+      <h1>Subastas Vigentes(Por ahora son todas XD)</h1>
+ <li class="dropdown">
+
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Ordenar<b class="caret"></b></a>
+
+            <ul class="dropdown-menu">
+
+                <li><a href="producto#index">Alfabeticamente</a></li><!-- Como tendria que hacer aca para que refresque la pagina pero con distinto orden?? -->
+
+                <li><a href="#"></a></li>
+
+                <li><a href="#">Sent Items</a></li>
+
+                <li class="divider"></li>
+
+                <li><a href="#">Trash</a></li>
+
+            </ul>
+
+        </li>
 
 <table class="table table-hover">
   <thead>
@@ -18,17 +42,16 @@
         <td><%= producto.titulo %></td>
         <td><%= producto.descripcion %></td>
         <td><%= producto.vencimiento %></td>
-        <td><%= link_to 'Show', producto %></td>
+
+        <td><%= link_to 'Show', producto, class:'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
         <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    <% if @productos.size==0 %>
-        NO HAY SUBASTAS
-      <% end %>
+    
   </tbody>
 </table>
 
 <br>
-
+<% end %><br>
 <%= link_to 'New Producto', new_producto_path %>

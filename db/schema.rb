@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141106150242) do
+=======
+ActiveRecord::Schema.define(version: 20141101204030) do
+>>>>>>> 16c245ee4adeb1384c26bdb622cf509e1448b8d1
 
   create_table "productos", force: true do |t|
     t.string   "image"

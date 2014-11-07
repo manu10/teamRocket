@@ -27,10 +27,12 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Fecha</th>
       <th>Titulo</th>
       <th>Descripcion</th>
       <th>Vencimiento</th>
+      <th>Usuario</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,11 +40,13 @@
   <tbody>
     <% @productos.each do |producto| %>
       <tr>
+        <td><img style:'max-width:10%;'><%= image_tag producto.image_url() if producto.image? %>
+        </td>
         <td><%= producto.fecha %></td>
         <td><%= producto.titulo %></td>
         <td><%= producto.descripcion %></td>
         <td><%= producto.vencimiento %></td>
-
+        <td><%= producto.usuario_id %></td>
         <td><%= link_to 'Show', producto, class:'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
         <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -55,3 +59,5 @@
 <br>
 <% end %><br>
 <%= link_to 'New Producto', new_producto_path %>
+
+

@@ -18,7 +18,7 @@ class ProductosControllerTest < ActionController::TestCase
 
   test "should create producto" do
     assert_difference('Producto.count') do
-      post :create, producto: { descripcion: @producto.descripcion, fecha: @producto.fecha, titulo: @producto.titulo, vencimiento: @producto.vencimiento }
+      post :create, producto: { descripcion: @producto.descripcion, fecha: @producto.fecha, image: @producto.image, titulo: @producto.titulo, usuario_id: @producto.usuario_id, vencimiento: @producto.vencimiento }
     end
 
     assert_redirected_to producto_path(assigns(:producto))
@@ -35,7 +35,7 @@ class ProductosControllerTest < ActionController::TestCase
   end
 
   test "should update producto" do
-    patch :update, id: @producto, producto: { descripcion: @producto.descripcion, fecha: @producto.fecha, titulo: @producto.titulo, vencimiento: @producto.vencimiento }
+    patch :update, id: @producto, producto: { descripcion: @producto.descripcion, fecha: @producto.fecha, image: @producto.image, titulo: @producto.titulo, usuario_id: @producto.usuario_id, vencimiento: @producto.vencimiento }
     assert_redirected_to producto_path(assigns(:producto))
   end
 

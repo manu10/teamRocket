@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Image:</strong>
+  <%= image_tag @producto.image_url() if @producto.image? %>
+</p>
+
+<p>
   <strong>Fecha:</strong>
   <%= @producto.fecha %>
 </p>
@@ -18,6 +23,11 @@
 <p>
   <strong>Vencimiento:</strong>
   <%= @producto.vencimiento %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @producto.usuario_id %>
 </p>
 
 <%= link_to 'Edit', edit_producto_path(@producto) %> |

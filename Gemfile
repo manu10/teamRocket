@@ -44,3 +44,5 @@ gem 'carrierwave'#Gema para cargar imageness
 gem 'sunspot_rails' #Gema para realizar busquuedas, buscar en railscast.com para aprender a usar
 
 gem 'devise'
+
+gem 'hirb'

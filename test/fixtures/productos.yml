@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fecha: 2014-11-01
+  image: MyString
+  fecha: 2014-11-06
   titulo: MyString
   descripcion: MyString
-  vencimiento: 2014-11-01
+  vencimiento: 2014-11-06
+  usuario_id: 1
 
 two:
-  fecha: 2014-11-01
+  image: MyString
+  fecha: 2014-11-06
   titulo: MyString
   descripcion: MyString
-  vencimiento: 2014-11-01
+  vencimiento: 2014-11-06
+  usuario_id: 1

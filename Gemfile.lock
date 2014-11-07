@@ -28,10 +28,14 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    bootstrap_form (2.2.0)
     bcrypt (3.1.9)
     bcrypt (3.1.9-x86-mingw32)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -49,6 +53,7 @@ GEM
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
+    hirb (0.7.2)
     i18n (0.6.11)
     jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
@@ -94,13 +99,10 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-<<<<<<< HEAD
-    rsolr (1.0.10)
-      builder (>= 2.1.2)
-=======
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
->>>>>>> 45251592d4e7db74eb4cc81d87a4ea19533bfc2e
+    rsolr (1.0.10)
+      builder (>= 2.1.2)
     sass (3.2.19)
     sass-rails (4.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -121,7 +123,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
     sqlite3 (1.3.10-x86-mingw32)
-<<<<<<< HEAD
     sunspot (2.1.1)
       pr_geohash (~> 1.0)
       rsolr (~> 1.0.7)
@@ -129,8 +130,6 @@ GEM
       nokogiri
       rails (>= 3)
       sunspot (= 2.1.1)
-=======
->>>>>>> 45251592d4e7db74eb4cc81d87a4ea19533bfc2e
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -154,9 +153,10 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bootstrap_form
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  hirb
   jbuilder (~> 2.0)
   jquery-rails
   pg

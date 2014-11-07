@@ -1,8 +1,4 @@
-<%= form_for(@producto, html: {role: 'form'}) do |f|%>
-
-  
-    
-
+<%= form_for(@producto) do |f| %>
   <% if @producto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
@@ -15,33 +11,29 @@
     </div>
   <% end %>
 
- 
-     
-    <div class="form-group">
-    <%= f.label :fecha, class: "control-label"  %><br>
-    <%= f.date_select :fecha, class: "form-control"  %>
-    </div>
-      </div>
-    
-  
-
-
   <div class="field">
-<div class="form-group">
-    <%= f.label :titulo, for: 'exampleInputEmail1' %><br>
-    <%= f.text_field :titulo, class: 'form-control', type: 'email', id: 'exampleInputEmail1', placeholder: 'Enter email' %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
   </div>
-  <div class="field" >
-
-
-    <!-- <textarea class="form-control" rows="3"><%= f.text_field :descripcion %></textarea> -->
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
     <%= f.label :descripcion %><br>
     <%= f.text_field :descripcion %>
   </div>
   <div class="field">
     <%= f.label :vencimiento %><br>
     <%= f.date_select :vencimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.number_field :usuario_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

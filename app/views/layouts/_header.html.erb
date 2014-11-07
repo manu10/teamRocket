@@ -37,6 +37,11 @@
 
  
     </ul>
+<%= form_tag(productos_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Buscar" %>
+<%= submit_tag "Buscar", :titulo => nil %>
+<% end %>
+
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     
@@ -46,6 +51,7 @@
         <input type="text" class="form-control" placeholder="Buscar"
         input class="typeahead" >
       </div>
+
       <button type="submit" class="btn btn-default"> buscar </button>
     </form>
     </ul>

@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141106150242) do
-=======
-ActiveRecord::Schema.define(version: 20141101204030) do
->>>>>>> 16c245ee4adeb1384c26bdb622cf509e1448b8d1
+ActiveRecord::Schema.define(version: 20141107115900) do
+
+  create_table "comentarios", force: true do |t|
+    t.integer  "id_user_msj"
+    t.string   "mensaje"
+    t.string   "respuesta"
+    t.integer  "id_user_rta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "productos", force: true do |t|
     t.string   "image"

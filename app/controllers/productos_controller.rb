@@ -2,11 +2,13 @@ class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
 
   def index
-    @productos = Producto.all
+    @productos = Producto.all 
   end
+ 
 
   def show
   end
+
 
   def new
     @producto = Producto.new

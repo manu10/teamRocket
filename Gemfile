@@ -1,12 +1,15 @@
 #set_encoding:UTF-8
 source 'https://rubygems.org'
 
-
+ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3',group: :development
-gem 'pg', group: :production
+group :production do
+  gem 'rails_12factor', '0.0.2'
+  gem 'pg'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,3 +50,4 @@ gem 'sunspot_rails' #Gema para realizar busquuedas, buscar en railscast.com para
 gem 'devise'
 
 gem 'hirb'
+gem 'devise'

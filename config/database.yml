@@ -20,7 +20,21 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-  
+
+
+# # default: &default
+# #   adapter: postgresql
+# #   pool: 5
+# #   timeout: 5000
+
+# # development:
+# #   <<: *default 
+# #   pool: 5
+# #   timeout: 5000
+# #   database: BestNidTR_development
+# #   username: postgres
+# #   password: manuel10
+
 # default: &default
 #   adapter: postgresql
 #   pool: 5
@@ -33,6 +47,7 @@ test:
 #   database: BestNidTR_development
 #   username: postgres
 #   password: manuel10
+
 
 # # Warning: The database defined as "test" will be erased and
 # # re-generated from your development database when you run "rake".

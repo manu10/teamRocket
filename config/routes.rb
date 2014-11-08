@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :productos
 
+get 'productos/search' => 'productos#search'
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

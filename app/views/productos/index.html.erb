@@ -3,6 +3,8 @@
 <h1>NO HAY SUBASTAS :'(</h1>
         
       <% else %>
+      
+        <%= params[:order]%>
       <h1>Subastas Vigentes(Por ahora son todas XD)</h1>
  <li class="dropdown">
 
@@ -10,9 +12,11 @@
 
             <ul class="dropdown-menu">
 
-                <li><a href="producto#index">Alfabeticamente</a></li><!-- Como tendria que hacer aca para que refresque la pagina pero con distinto orden?? -->
+                <li><%= link_to 'Alfabeticamente', productos_path(params:{orden:'titulo desc'}) %></li>
 
-                <li><a href="#"></a></li>
+                <!-- Como tendria que hacer aca para que refresque la pagina pero con distinto orden?? -->
+
+                <li><%= link_to 'fecha creacion', productos_path(params:{orden:'created_at'}) %></li>
 
                 <li><a href="#">Sent Items</a></li>
 

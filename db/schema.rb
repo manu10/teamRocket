@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107122339) do
+ActiveRecord::Schema.define(version: 20141110121455) do
 
   create_table "comentarios", force: true do |t|
     t.integer  "id_user_msj"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141107122339) do
     t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "UrlImage"
   end
 
 end

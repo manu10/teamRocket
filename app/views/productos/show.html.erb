@@ -30,5 +30,23 @@
   <%= @producto.usuario_id %>
 </p>
 
-<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<p>
+  <strong>Comentarios</strong>
+  <%if @producto.comments.count == 0%>
+        <h3>Sin comentarios</h3>
+  <% else %>
+        <ul>
+   <% @producto.comments.each do |c| %>
+   <% if c == "." or c == ".." then next end; %>
+   <li>
+      <strong> <%= c.user_id %> preguntó: </strong>  <%=c.mensaje %>  
+      <%= link_to "Editar comentario", edit_comment_path(c) %>
+       %><ul><strong> Respuesta: </strong> <%=c.respuesta %> </ul>
+   </li>
+   <% end %>
+</ul>
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> 
 <%= link_to 'Back', productos_path %>

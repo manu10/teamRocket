@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107122339) do
-
-  create_table "comentarios", force: true do |t|
-    t.integer  "id_user_msj"
-    t.string   "mensaje"
-    t.string   "respuesta"
-    t.integer  "id_user_rta"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141110091857) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -28,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141107122339) do
     t.text     "respuesta"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "producto_id"
   end
 
   create_table "productos", force: true do |t|

@@ -12,17 +12,15 @@
 
             <ul class="dropdown-menu">
 
-                <li><%= link_to 'Alfabeticamente', productos_path(params:{orden:'titulo desc'}) %></li>
+                <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
 
-                <!-- Como tendria que hacer aca para que refresque la pagina pero con distinto orden?? -->
+                <li><%= link_to 'fecha creacion ascendente', sort: "created_at", direction:"asc" %></li>
 
-                <li><%= link_to 'fecha creacion', productos_path(params:{orden:'created_at'}) %></li>
+                <li><%= link_to 'fecha creacion descendente', sort: "created_at", direction:"desc" %></li>
 
-                <li><a href="#">Sent Items</a></li>
+                <li><%= link_to 'Vencimiento subasta ascendente', sort: "vencimiento", direction:"asc" %></li>
 
-                <li class="divider"></li>
-
-                <li><a href="#">Trash</a></li>
+                <li><%= link_to 'Vencimiento subasta descendente', sort: "vencimiento", direction:"desc" %></li>
 
             </ul>
 

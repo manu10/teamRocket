@@ -2,12 +2,7 @@ class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search]
-    @productos = Producto.search(params[:search]).order("created_at DESC")
-  else
-    @productos = Producto.all.order('created_at DESC')
-  end
-  # @productos = Producto.order(params[:orden])
+    @productos=Producto.order(sort_column + ' ' + sort_direction)
   
   end
   
@@ -21,6 +16,7 @@ class ProductosController < ApplicationController
 
   def edit
   end
+  
   def get
 
   end
@@ -48,4 +44,12 @@ class ProductosController < ApplicationController
     def producto_params
       params.require(:producto).permit(:image, :fecha, :titulo, :descripcion, :vencimiento, :usuario_id)
     end
+
+     def sort_column
+    params[:sort] || "titulo"
+  end
+  
+  def sort_direction
+    params[:direction] || "asc"
+  end
 end

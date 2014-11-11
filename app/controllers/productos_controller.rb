@@ -3,7 +3,6 @@ class ProductosController < ApplicationController
 
   def index
     @productos=Producto.order(sort_column + ' ' + sort_direction)
-  
   end
   
 
@@ -24,10 +23,14 @@ class ProductosController < ApplicationController
   def create
     @producto = Producto.new(producto_params)
     @producto.save
+
+    redirect_to productos_path 
   end
 
   def update
     @producto.update(producto_params)
+
+    redirect_to productos_path 
   end
 
   def destroy
@@ -42,7 +45,7 @@ class ProductosController < ApplicationController
     end
 
     def producto_params
-      params.require(:producto).permit(:image, :fecha, :titulo, :descripcion, :vencimiento, :usuario_id)
+      params.require(:producto).permit(:image, :fecha, :titulo, :descripcion, :vencimiento, :usuario_id, :UrlImage)
     end
 
      def sort_column

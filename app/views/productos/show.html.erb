@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+
+<img src="<%=@producto.UrlImage%>" alt="Smiley face" >
 <p>
   <strong>Image:</strong>
+
   <%= image_tag @producto.image_url() if @producto.image? %>
 </p>
 

@@ -2,7 +2,9 @@ class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
 
   def index
+    
     @productos=Producto.order(sort_column + ' ' + sort_direction)
+
   end
   
 

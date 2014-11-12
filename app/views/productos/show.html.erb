@@ -33,13 +33,13 @@
   <%= @producto.usuario_id %>
 </p>
 
+<h2>Comentarios</h2>
+<%= render 'comments/comment' %>
+</p>
 <p>
   <h2>Añadir un comentario:</h2>
  <%= render "comments/form" %>
 
-<h2>Comentarios</h2>
-<%= render @producto.comments %>
-</p>
 
 <%= link_to 'Edit', edit_producto_path(@producto) %> 
 <%= link_to 'Back', productos_path %>

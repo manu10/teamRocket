@@ -5,6 +5,11 @@
       <% else %>
       
         <%= params[:search]%>
+
+
+
+
+
       <h1>Subastas Vigentes(Por ahora son todas XD)</h1>
  <li class="dropdown">
 
@@ -29,7 +34,7 @@
     <% @productos.each do |producto| %>
 
       <dt><%= producto.titulo %> </dt>
-      <img src="<%=producto.UrlImage%>" alt="Smiley face" style="max-width: 5%; max-height: 5%;">
+      <img src="<%=producto.UrlImage%>" alt="SIN IMAGEN" style="max-width: 15%; max-height: 15%;">
  <!--  <img style:'max-width:10%;'><%= image_tag producto.image_url() if producto.image? %><br> -->
   <dt><%= producto.descripcion %></dt>
   <dd></dd>

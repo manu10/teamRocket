@@ -1,6 +1,6 @@
 <%= form_for([@producto, @producto.comments.build]) do |f| %>
   <p>
-    <%= f.label :user_id %><br>
+    <%= f.label :usuario %><br>
     <%= f.text_field :user_id %>
   </p>
   <p>
@@ -8,6 +8,6 @@
     <%= f.text_area :mensaje , cols:100, rows:5 %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Comentar" %>
   </p>
 <% end %>

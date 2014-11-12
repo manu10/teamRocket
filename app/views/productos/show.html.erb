@@ -3,7 +3,7 @@
 
 <img src="<%=@producto.UrlImage%>" alt="Smiley face" >
 <p>
-  <strong>Image:</strong>
+  <strong>Imagen:</strong>
 
   <%= image_tag @producto.image_url() if @producto.image? %>
 </p>
@@ -41,5 +41,5 @@
  <%= render "comments/form" %>
 
 
-<%= link_to 'Edit', edit_producto_path(@producto) %> 
-<%= link_to 'Back', productos_path %>
+<%= link_to 'Editar producto', edit_producto_path(@producto) %> 
+<%= link_to 'Atras', productos_path %>

@@ -1,52 +1,43 @@
  <!--  -->
  <header>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <!-- El logotipo y el icono que despliega el menu se agrupan
        para mostrarlos mejor en los dispositivos moviles -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Desplegar navegacion</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-
-  <a class="navbar-header">
-          
-          
-          <%= link_to root_path, class: 'navbar-brand' do %>
-            <%= image_tag "logo.png", title: "Logo", class: "logo" %>
-            <!--BestNid-->
-          <% end %></a>
-  </div>
- 
+  <div class="navbar-header"> 
   <!-- Agrupar los enlaces de navegacion, los formularios y cualquier
        otro elemento que se pueda ocultar al minimizar la barra -->
   <ul class="nav navbar-nav">
       
  <ul class="nav nav-pills">
 
-        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Home </a></li>
 
-        <li><a href="#">Profile</a></li>
-
-       
+        <li><a href="#">Profile</a></li>     
     </ul>
 
  
     </ul>
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <a class="navbar-header center-block">
+          
+          
+          <%= link_to root_path, class: 'navbar-brand center-block' do %>
+            <%= image_tag "logo.png", title: "Logo", class: "img-thumbnail col-md-4 col-md-offset-9"%>
+            <!--BestNid-->
+          <% end %></a>
+  </div>
+<div class="collapse navbar-collapse navbar-ex1-collapse">
     
     <ul class="nav navbar-nav navbar-right">
-      <%= form_tag(productos_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Buscar" %>
-      <%= submit_tag "Buscar", :titulo => nil %>
-      <% end %>
-    </ul>
+<%= form_tag(productos_path, :method => "get", id: "search-form", class:'navbar-form navbar-left') do %>
+<%= text_field_tag :search, params[:search], placeholder: "Buscar",class:'form-control' %>
+<%= submit_tag "Buscar", :titulo => nil, class:'btn btn-default'%>
+<% end %>
+ </ul>
   </div>
+
+
 </nav>
 
 

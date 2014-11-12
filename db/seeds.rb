@@ -11,3 +11,15 @@ Producto.find_or_create_by(fecha: '2014-04-07', titulo: 'Espejo',descripcion: 'E
 Producto.find_or_create_by(fecha: '2014-05-08', titulo: 'Kriptonita',descripcion: '200 gramos de Kriptonita',vencimiento: '2014-06-5', UrlImage: 'http://41.media.tumblr.com/8e08757ed8fd1c3368e29dc127140ef1/tumblr_nbsewqvU231tlipbuo1_1280.jpg')
 Producto.find_or_create_by(fecha: '2014-06-09', titulo: 'Aceite y Vinagre',descripcion: '200ml de aceite y 300ml de vinagre. No incluye fascos',vencimiento: '2014-06-24', UrlImage: 'http://40.media.tumblr.com/f92d39b2c62cf2bc5398797db35ce37d/tumblr_nbsejfmSt21tlipbuo1_400.jpg')
 
+llama = Producto.where(titulo: "Llama").first
+kript = Producto.where(titulo: "Kriptonita").first
+esp = Producto.where(titulo: "Espejo").first
+guant = Producto.where(titulo: "Guantes de acero").first
+
+Comment.find_or_create_by(producto: llama, mensaje: "Como se LLAMA?", respuesta: "Maria de las Mercedes")
+
+Comment.find_or_create_by(producto: kript, mensaje: "Conoces a Superman?", respuesta: "No")
+
+Comment.find_or_create_by(producto: esp, mensaje: "por que lo subastas?", respuesta: "Porque no me veo bien")
+
+Comment.find_or_create_by(producto: guant, mensaje: "te da fuerza sobre humana al usarlo?", respuesta: "SI :)")

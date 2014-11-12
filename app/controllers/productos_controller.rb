@@ -2,9 +2,13 @@ class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
 
   def index
-    
+     if params[:search]
+    @productos = Producto.search(params[:search]).order("created_at DESC")
+  else
+
     @productos=Producto.order(sort_column + ' ' + sort_direction)
 
+  end
   end
   
 

@@ -12,11 +12,15 @@
 
             <ul class="dropdown-menu">
 
-                <li><%= link_to 'Alfabeticamente', :orden => "titulo asc" %></li>
+                <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
 
-                <li class="divider"></li>
+                <li><%= link_to 'fecha creacion ascendente', sort: "created_at", direction:"asc" %></li>
 
-                <li><%= link_to 'fecha creacion', :orden => "created_at asc" %></li>               
+                <li><%= link_to 'fecha creacion descendente', sort: "created_at", direction:"desc" %></li>
+
+                <li><%= link_to 'Vencimiento subasta ascendente', sort: "vencimiento", direction:"asc" %></li>
+
+                <li><%= link_to 'Vencimiento subasta descendente', sort: "vencimiento", direction:"desc" %></li>
 
             </ul>
 

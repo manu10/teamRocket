@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141110121455) do
 
-  create_table "comentarios", force: true do |t|
-    t.integer  "id_user_msj"
-    t.string   "mensaje"
-    t.string   "respuesta"
-    t.integer  "id_user_rta"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.text     "mensaje"

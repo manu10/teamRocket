@@ -48,8 +48,5 @@ gem 'sunspot_rails' #Gema para realizar busquuedas, buscar en railscast.com para
 
 gem 'devise'
 
-<<<<<<< HEAD
 gem 'hirb'
-=======
-gem 'hirb'
->>>>>>> 6f182978ec9d39668202d8f109ac794cb13032d9
+

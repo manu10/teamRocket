@@ -13,12 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20141107122339) do
 
+
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.text     "mensaje"
     t.text     "respuesta"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "producto_id"
   end
 
   create_table "productos", force: true do |t|
@@ -30,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141107122339) do
     t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "UrlImage"
   end
 
 end

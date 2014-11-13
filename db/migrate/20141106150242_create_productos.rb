@@ -7,7 +7,6 @@ class CreateProductos < ActiveRecord::Migration
       t.string :descripcion
       t.date :vencimiento
       t.integer :usuario_id
-
       t.timestamps
     end
   end

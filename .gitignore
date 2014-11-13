@@ -9,8 +9,6 @@
 /.bundle
 #ignorar txt de consultas 
 /CONSULTAS
-#ignorar Gemfile.lock de consultas 
-/Gemfile.lock
 
 
 # Ignore all logfiles and tempfiles.

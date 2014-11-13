@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <!-- <%= f.file_field :image %> -->
+    <%= f.text_field :image %>
   </div>
   <div class="field">
     <%= f.label :fecha %><br>
@@ -27,6 +28,10 @@
     <%= f.label :descripcion %><br>
     <%= f.text_field :descripcion %>
   </div>
+   <div class="field">
+    <%= f.label :UrlImage %><br>
+    <%= f.text_field :UrlImage %>
+  </div>
   <div class="field">
     <%= f.label :vencimiento %><br>
     <%= f.date_select :vencimiento %>
@@ -36,6 +41,6 @@
     <%= f.number_field :usuario_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Actualizar producto" %>
   </div>
 <% end %>

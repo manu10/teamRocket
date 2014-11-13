@@ -1,67 +1,51 @@
 
 <% if @productos.size==0 %>
-<h1>NO HAY SUBASTAS :'(</h1>
+<h1>No se encontraron subastas</h1>
         
       <% else %>
       
-        <%= params[:order]%>
-      <h1>Subastas Vigentes(Por ahora son todas XD)</h1>
- <li class="dropdown">
+      <h1>Subastas Vigentes  </h1>
 
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Ordenar<b class="caret"></b></a>
 
-            <ul class="dropdown-menu">
+      <div class="btn-group">
+  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+    Ordenar <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+  
+                <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
 
-                <li><%= link_to 'Alfabeticamente', productos_path(params:{orden:'titulo desc'}) %></li>
+                <li><%= link_to 'Fecha de creacion ascendente', sort: "created_at", direction:"asc" %></li>
 
-                <!-- Como tendria que hacer aca para que refresque la pagina pero con distinto orden?? -->
+                <li><%= link_to 'Fecha de creacion descendente', sort: "created_at", direction:"desc" %></li>
 
-                <li><%= link_to 'fecha creacion', productos_path(params:{orden:'created_at'}) %></li>
+                <li><%= link_to 'Vencimiento de subasta ascendente', sort: "vencimiento", direction:"asc" %></li>
 
-                <li><a href="#">Sent Items</a></li>
+                <li><%= link_to 'Vencimiento de subasta descendente', sort: "vencimiento", direction:"desc" %></li>
 
-                <li class="divider"></li>
+  </ul>
+</div>
 
-                <li><a href="#">Trash</a></li>
+    <% @productos.each do |producto| %> 
 
-            </ul>
-
-        </li>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Fecha</th>
-      <th>Titulo</th>
-      <th>Descripcion</th>
-      <th>Vencimiento</th>
-      <th>Usuario</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @productos.each do |producto| %>
-      <tr>
-        <td><img style:'max-width:10%;'><%= image_tag producto.image_url() if producto.image? %>
-        </td>
-        <td><%= producto.fecha %></td>
-        <td><%= producto.titulo %></td>
-        <td><%= producto.descripcion %></td>
-        <td><%= producto.vencimiento %></td>
-        <td><%= producto.usuario_id %></td>
-        <td><%= link_to 'Show', producto, class:'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    
-  </tbody>
-</table>
-
+      <dt><%= producto.titulo %> </dt>
+      <img src="<%=producto.UrlImage%>" alt="SIN IMAGEN" style="max-width: 15%; max-height: 15%;">
+ <!--  <img style:'max-width:10%;'><%= image_tag producto.image_url() if producto.image? %><br> -->
+  <dt><%= producto.descripcion %></dt>
+  <dd></dd>
+  <dt>Publicado: </dt>
+  <dd><%= producto.created_at %></dd>
+  <dt>Vencimiento: </dt>
+  <dd><%= producto.vencimiento %></dd>
+  <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
+  <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>
+  <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>
+  <br>
+  <% end %>
+    </dl>
 <br>
 <% end %><br>
-<%= link_to 'New Producto', new_producto_path %>
+
+<%= link_to 'Nuevo producto', new_producto_path %>
 
 

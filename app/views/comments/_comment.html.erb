@@ -1,19 +1,17 @@
 <%if @producto.comments.count == 0%>
         <h3>Sin comentarios</h3>
 <% else %>
-  <% @producto.comments.each do |c| %>
   <p>
     <strong>Usuario:</strong>
-    <%= c.user_id %>
+    <%= comment.user_id %>
   </p>
   <p>
-    <strong>Dijo:</strong>
-    <%= c.mensaje %>
-    <!--<%= link_to "Editar comentario", [c.producto, c], method: :edit %>  -->
-    <!-- <%= link_to "Responder", respuesta_path(c) %> -->
-  </p>
+    <strong>dijo:</strong>
+    <%= comment.mensaje %>
+    <!--<%= link_to "Editar comentario"%>
+    <%= link_to "Responder" %>
   <p>
-    <strong> Respuesta: </strong> <%=c.respuesta %> 
-  </p>
+    <strong> Respuesta: </strong> <%=%> 
+  </p>-->
 <% end %>
-        <% end %>
+        

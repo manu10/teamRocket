@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
-<<<<<<< HEAD
-=======
+
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   get 'comments/index' 
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
   get 'comments/update'
 
   get 'comments/destroy'
->>>>>>> bacd5be8378b07105c1569d34e6d138d8a98e505
+
   
   get 'static_pages/ayuda'
 

@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   
 
-<<<<<<< HEAD
+
   get 'credit_cards/new'
 
   get 'credit_cards/create'
 
   get 'credit_cards/set_credit_card'
-=======
->>>>>>> 59e02ffed1c0e70d5bbf6e88fd56aa609510a31e
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   get 'comments/index' 

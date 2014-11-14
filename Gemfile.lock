@@ -28,7 +28,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.9)
     bcrypt (3.1.9-x86-mingw32)
+    bootstrap-sass (3.2.0.0)
+      sass (~> 3.2)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -68,9 +71,12 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     multi_json (1.10.1)
+    nokogiri (1.6.4.1)
+      mini_portile (~> 0.6.0)
     nokogiri (1.6.4.1-x86-mingw32)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.5)
     pr_geohash (1.0.0)
@@ -122,6 +128,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sqlite3 (1.3.10)
     sqlite3 (1.3.10-x86-mingw32)
     sunspot (2.1.1)
       pr_geohash (~> 1.0)
@@ -152,6 +159,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bootstrap-sass (= 3.2.0.0)
   carrierwave
   coffee-rails (~> 4.0.0)
   devise

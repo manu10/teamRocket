@@ -5,6 +5,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+  </script>
+<![endif]-->                                                                     #Se incluye esá línea solo si el explorador es anterior a IE9,ya que 	                                                                                  estás versiones no soportan completamente HTML5
 </head>
 <body>
 <%= render 'layouts/header' %>

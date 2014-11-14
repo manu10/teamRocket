@@ -1,5 +1,5 @@
 class Producto < ActiveRecord::Base
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	mount_uploader :image, ImageUploader
 validate :expiration_date_cannot_be_in_the_past
  

@@ -1,34 +1,43 @@
 Rails.application.routes.draw do
   
 
+<<<<<<< HEAD
   get 'credit_cards/new'
 
   get 'credit_cards/create'
 
   get 'credit_cards/set_credit_card'
+=======
+>>>>>>> 59e02ffed1c0e70d5bbf6e88fd56aa609510a31e
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   get 'comments/index' 
 
-  get 'comments/show'
+  get 'comments/show' => 'comments#show'
 
-  get 'comments/new'
+  get 'comments/new' => 'comments#new'
 
-  get 'comments/edit' 
+  get 'comments/edit' => 'comments#edit'
 
-  get 'comments/get'
+  get 'comments/get' => 'comments#get'
 
-  get 'comments/create'
+  get 'comments/create' => 'comments#create'
 
-  get 'comments/update'
+  get 'comments/update' => 'comments#update'
 
-  get 'comments/destroy'
+  get 'comments/destroy' => 'comments#destroy'
+
   
-  get '/respuesta', to: 'paginas_estaticas#respuesta'
+  get 'ayuda' => 'static_pages#ayuda' 
+  get 'contacto' => 'static_pages#contacto'
+
+  
  
   resources :productos do
     resources :comments
   end
+
+
 get 'productos/search' => 'productos#search'
   get 'welcome/index'
 

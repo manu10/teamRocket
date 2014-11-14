@@ -13,6 +13,8 @@ class ProductosController < ApplicationController
   
 
   def show
+   @producto = Producto.find(params[:id]);
+   @comment=Comment.new()
   end
 
   def new

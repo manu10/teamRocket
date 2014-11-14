@@ -1,27 +1,15 @@
 Rails.application.routes.draw do
   
-
-  get 'comments/index' 
-
-  get 'comments/show'
-
-  get 'comments/new'
-
-  get 'comments/edit' 
-
-  get 'comments/get'
-
-  get 'comments/create'
-
-  get 'comments/update'
-
-  get 'comments/destroy'
   
-  get '/respuesta', to: 'paginas_estaticas#respuesta'
+  get 'static_pages/ayuda'
+
+  get '/responder', to: 'paginas_estaticas#responder'
  
   resources :productos do
     resources :comments
   end
+
+
 get 'productos/search' => 'productos#search'
   get 'welcome/index'
 

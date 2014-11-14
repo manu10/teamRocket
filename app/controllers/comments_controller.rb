@@ -6,11 +6,14 @@ class CommentsController < ApplicationController
   end
 
   def new
-   @comment=Comment.new
+   @producto= Producto.find(params[:producto_id])
+   @comment=Comment.new()
   end
 
   def edit
-    
+    @producto = Producto.find(params[:producto_id])
+    @comment = @producto.comments.find(params[:id])
+    @mensaje = @comment.mensaje
   end
 
   def get
@@ -18,16 +21,42 @@ class CommentsController < ApplicationController
 
   def create
      @producto = Producto.find(params[:producto_id])
-    @comment = @producto.comments.create(comment_params)
-    redirect_to producto_path(@producto)
+    @comment = @producto.comments.new(comment_params)
+    if @producto.save
+      redirect_to producto_path(@producto), notice:"se ha publicado tu comentario"
+    else
+      render "new"
+    end
   end
 
   def update
-  end
+   @mensaje = params[:comment][:mensaje];
+   @producto = Producto.find(params[:producto_id]);
+   @comment = Comment.find(params[:id]);
+   @comment.mensaje = @mensaje;
+   if @comment.save()
+      redirect_to producto_path(@producto), :notice => "El comentario ha sido modificado";
+   else
+      render "edit";
+   end
+end
 
   def destroy
+    @producto = Producto.find(params[:producto_id])
+    @comment = @producto.comments.find(params[:id])
+    if @comment.destroy
+        redirect_to producto_path(@producto), notice:"se ha eliminado tu comentario"
+    else
+        render "destroy"
+    end
   end
 
+def answer
+    @producto = Producto.find(params[:producto_id])
+    @comment = @producto.comments.find(params[:id])
+    @mensaje = @comment.respuesta
+end
+private
   def comment_params
       params.require(:comment).permit(:user_id, :mensaje, :respuesta, :producto_id)
   end

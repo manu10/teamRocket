@@ -1,9 +1,16 @@
-<%= form_for([@producto, @producto.comments.build]) do |f| %>
+<%= form_for([@producto, @comment]) do |f| %>
+<% if @comment.errors.any? %>
+      <ul>
+         <% @comment.errors.each do |mensaje| %>
+         <li> <%= mensaje %> </li>
+         <% end %>
+      </ul>
+   <% end %>
   <p>
     <%= f.label "Escriba su comentario:" %><br>
-    <%= f.text_area :mensaje , cols:100, rows:5 %>
+    <%= f.text_area :mensaje , {value:@mensaje,cols:100,rows:5} %>
   </p>
   <p>
-    <%= f.submit "Comentar" %>
+    <%= f.submit "Hecho" %>
   </p>
 <% end %>

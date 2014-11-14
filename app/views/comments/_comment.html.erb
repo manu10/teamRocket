@@ -3,10 +3,14 @@
 <% else %>
   <p>
     <%= comment.mensaje %>
-    <!--<%= link_to "Editar comentario"%>
-    <%= link_to "Responder" %>
+  </p>
+
   <p>
-    <strong> Respuesta: </strong> <%=%> -->
+  <%= link_to 'Eliminar comentario', [comment.producto, comment],
+               method: :delete,
+               data: { confirm: '¿Está seguro de que quiere eliminar su comentario?' } %>
+  <%= link_to 'Editar comentario', edit_producto_comment_path(comment.producto , comment) %>
+  <%= link_to 'Responder', responder_path %>
   </p>
 <% end %>
-        
+    

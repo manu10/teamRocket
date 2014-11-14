@@ -70,12 +70,12 @@
     <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
   
- <div class="nav navbar-nav navbar-right"> <li><%= link_to 'Edit profile', edit_user_registration_path%> </li></div>
-  <div class="nav navbar-nav navbar-right"><li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li><br></div>
+ <div class="nav navbar-nav navbar-right"> <li><%= link_to 'Editar perfil', edit_user_registration_path%> </li></div>
+  <div class="nav navbar-nav navbar-right"><li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete%></li><br></div>
    <strong class="nav navbar-nav navbar-right">Logged in as <%= current_user.email %></strong>
 <% else %>
-  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
-  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+  <li><%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> </li>
+  <li><%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %></li>
 <% end %>
      
     </ul>
@@ -85,4 +85,4 @@
 
 
   </header>
-
+ 

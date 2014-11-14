@@ -34,9 +34,19 @@ class ProductosController < ApplicationController
   end
 
   def update
-    @producto.update(producto_params)
-
+  @producto.update(producto_params)
+  
     redirect_to productos_path 
+
+
+  #    if @producto.vencimiento <= Date.today
+      
+  #     flash[:notice]="No se puede vencer antes que hoy"
+  #     redirect_to producto
+  #   else
+  #   @producto.update(producto_params)
+  # end
+  #   redirect_to productos_path 
   end
 
   def destroy

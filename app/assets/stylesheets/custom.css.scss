@@ -23,3 +23,39 @@ header {
     font-size: 0.9em;
     height: 30px;
 }
+
+.label-creditcard {
+    font-size: 0.8em;
+    height: 10px;
+}
+.form-creditcard{
+    font-size: 0.9em;
+    height: 30px;
+}
+
+#error_explanation {
+margin-left: 0em;
+  margin-right: .0em;
+    text-align: center;
+    color: red;
+    background-color: #b0c4de;
+} 
+.field_with_errors label {
+  padding: 2px;
+  background-color: red;
+}
+
+.field_with_errors input[type="text"] {
+margin-left: 0em;
+  margin-right: .0em;
+  align: justify;
+  border: 2px solid red;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.field_with_errors {
+    @extend .control-group;
+    @extend .error;
+
+}

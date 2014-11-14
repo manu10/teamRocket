@@ -8,5 +8,15 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :credit_cards
   accepts_nested_attributes_for :domicile 
+  #####ESTO NO ES PROBLEMA#####
+
+  validates :name, 
+  		length: { minimum: 10 }
+  validates :DNI, 
+  		numericality: { only_integer: true },
+  		uniqueness:true,
+  		length:{ minimum:6, maximum:8}
+
+
 
 end

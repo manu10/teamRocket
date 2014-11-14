@@ -1,7 +1,7 @@
 class DomicilesController < ApplicationController
 
  before_action :set_domicile only: [:edit, :update, :destroy]
-
+##############TODO ESTO (lo qu esta a continuacion) NO SE USA PARA EDITAR Y CREAR###########
     def show
   end
 
@@ -24,7 +24,6 @@ class DomicilesController < ApplicationController
   def update
     @domicile.update(domicile_params)
 
-    redirect_to domiciles_path 
   end
 
   def destroy
@@ -33,12 +32,12 @@ class DomicilesController < ApplicationController
   end
 
   private
-    def set_domicile
+    def set_domicile 
       @domicile = Domicile.find(params[:id])
     end
 
     def domicile_params
       params.require(:domicile).permit(:city, :street, :province, :country, :number)
     end
-
+##############TODO ESTO (lo qu esta arriba) NO SE USA PARA EDITAR Y CREAR###########
 end

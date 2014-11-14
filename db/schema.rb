@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107122339) do
-
+ActiveRecord::Schema.define(version: 20141113225942) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -22,6 +21,31 @@ ActiveRecord::Schema.define(version: 20141107122339) do
     t.datetime "updated_at"
     t.integer  "producto_id"
   end
+
+  create_table "credit_cards", force: true do |t|
+    t.integer  "number"
+    t.string   "owner"
+    t.date     "expireDate"
+    t.integer  "securityCode"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id"
+
+  create_table "domiciles", force: true do |t|
+    t.integer  "number"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
+    t.string   "country"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "domiciles", ["user_id"], name: "index_domiciles_on_user_id"
 
   create_table "productos", force: true do |t|
     t.string   "image"
@@ -34,5 +58,27 @@ ActiveRecord::Schema.define(version: 20141107122339) do
     t.datetime "updated_at"
     t.text     "UrlImage"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.integer  "DNI"
+    t.integer  "phone"
+    t.date     "birthDate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

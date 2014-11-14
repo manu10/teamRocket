@@ -1,41 +1,84 @@
- <!--  -->
+
+
+
+
+
+   <!--  -->
  <header>
+  
 
-<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-  <!-- El logotipo y el icono que despliega el menu se agrupan
-       para mostrarlos mejor en los dispositivos moviles -->
-  <div class="navbar-header"> 
-  <!-- Agrupar los enlaces de navegacion, los formularios y cualquier
-       otro elemento que se pueda ocultar al minimizar la barra -->
-  <ul class="nav navbar-nav">
-      
-  <ul class="nav nav-pills">
-    <li class="active"><a href="#">Inicio</a></li>
-    <li><a href="#">Perfil</a></li>
-    <li><a href="#">Mensajes</a></li>
-  </ul>
+<nav class="navbar navbar-default navbar-fixed-top  navbar-inverse" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
 
-  <a class="navbar-header center-block">
-          
-          
-          <%= link_to root_path, class: 'navbar-brand center-block' do %>
-            <%= image_tag "logo.png", title: "Logo", class: "img-thumbnail col-md-4 col-md-offset-9"%>
+
+
+
+ <%= link_to root_path, class: 'navbar-brand center-block' do %>
+            <%= image_tag "logo.png", title: "Logo", class: "img-thumbnail"%>
             <!--BestNid-->
           <% end %></a>
+
+
   </div>
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-    
-    <ul class="nav navbar-nav navbar-right">
+ 
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Subastas vigentes</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Por Categoria <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Acción #1</a></li>
+          <li><a href="#">Acción #2</a></li>
+          <li><a href="#">Acción #3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Acción #4</a></li>
+
+        </ul>
+      </li>
+      
+    </ul>
+ 
+  
+<ul class="nav navbar-nav navbar-right">
 <%= form_tag(productos_path, :method => "get", id: "search-form", class:'navbar-form navbar-left') do %>
 <%= text_field_tag :search, params[:search], placeholder: "Buscar",class:'form-control' %>
 <%= submit_tag "Buscar", :titulo => nil, class:'btn btn-default'%>
 <% end %>
  </ul>
+
+
+
+
+
+
+ 
+    <ul class="nav navbar-nav navbar-right">
+       <% if user_signed_in? %>
+  
+ <div class="nav navbar-nav navbar-right"> <li><%= link_to 'Edit profile', edit_user_registration_path%> </li></div>
+  <div class="nav navbar-nav navbar-right"><li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li><br></div>
+   <strong class="nav navbar-nav navbar-right">Logged in as <%= current_user.email %></strong>
+<% else %>
+  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
+  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+<% end %>
+     
+    </ul>
   </div>
-
-
 </nav>
 
 
-    </div>
   </header>

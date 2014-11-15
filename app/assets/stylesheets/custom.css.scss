@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
   padding-top: 120px;
 }
@@ -23,3 +26,35 @@ header {
     font-size: 0.9em;
     height: 30px;
 }
+.label-creditcard {
+    font-size: 0.8em;
+    height: 10px;
+}
+.form-creditcard {
+    font-size: 0.9em;
+    height: 30px;
+} 
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+
+  .footer{
+    height: 60px;
+    background-color: #f9f9f9;
+  }
+

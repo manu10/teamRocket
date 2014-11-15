@@ -8,14 +8,32 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :credit_cards
   accepts_nested_attributes_for :domicile 
-  #####ESTO NO ES PROBLEMA#####
+      
+
 
   validates :name, 
-  		length: { minimum: 10 }
+      presence: true,
+      length: { minimum: 10, maximum:25}
+
   validates :DNI, 
-  		numericality: { only_integer: true },
-  		uniqueness:true,
-  		length:{ minimum:6, maximum:8}
+      numericality: { only_integer: true },
+      presence: true,
+      uniqueness:true,
+      length:{ minimum:6, maximum:8}
+
+  validates :phone, 
+      presence: true,
+  		length:{ maximum:18}
+
+  validate :greater_than_18
+ 
+  def greater_than_18
+    if birthDate+18.year > Date.today
+      errors.add(:birthDate, "Debes ser mayor de edad para poder usar BestNid")
+    end
+  end
+
+
 
 
 

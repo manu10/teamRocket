@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
-
+resources :credit_cards
   get 'credit_cards/new'
 
   get 'credit_cards/create'

@@ -3,10 +3,9 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-
- <div class="row center-block">
+<div class="row center-block">
     <div class="center-block col-md-4">
-    <%= f.label :name%>
+    <%= f.label "Nombre completo (*)" %>
     <%= f.text_field :name, autofocus: true , :required => "required", class:"form-control" %>
     </div>
   </div>
@@ -14,30 +13,49 @@
 
   <div class="row center-block">
     <div class="center-block col-md-4">
-    <%= f.label :phone%>
+    <%= f.label "Telefono (*)" %>
     <%= f.telephone_field :phone, autofocus: true , :required => "required", class:"form-control" %>
     </div>
   </div>
   
+
+  <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+
   <div class="row center-block">
     <div class="center-block col-md-4">
-    <%= f.label :birthDate%><br>
-    <%= f.date_select :birthDate, :order => [:day, :month, :year], autofocus: true , :required => "required", class:"form-control" %>
+    <%= f.label "Fecha de nacimiento(*)" %><br>
+    <%= f.date_select :birthDate,:order => [:day, :month, :year],start_year:1900,end_year:Date.today.year, autofocus: true , :required => "required", class:"form-control" %>
     </div>
   </div>
 
   <div class="row center-block">
     <div class="center-block col-md-4">
-    <%= f.label :DNI%>
+    <%= f.label "DNI (*)" %>
     <%= f.text_field :DNI, autofocus: true , :required => "required", class:"form-control" %>
     </div>
   </div>
 
-
   <div class="row center-block">
   <div class="field col-md-4 center-block" >
     
-    <%= f.label :email %>
+    <%= f.label "Email(*)"  %>
     <%= f.email_field :email, autofocus: true, type: "email", class:"form-control", id: "exampleInputEmail1", placeholder: "Enter email" %>
   </div>
   </div>
@@ -45,7 +63,7 @@
 
  <div class="row center-block">
   <div class="field col-md-4 center-block" >
-    <%= f.label :password %>
+    <%= f.label "Contraseña (*)" %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -54,7 +72,7 @@
     </div>
 <div class="row center-block">
   <div class="field col-md-4 center-block" >
-    <%= f.label :password_confirmation %><br />
+    <%= f.label "Repita la Contraseña (*)" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
   </div>
   </div>
@@ -65,36 +83,36 @@
 
 
    <%= f.fields_for :domicile, Domicile.new do |s| %>
-    <div class="row center-block">
+        <div class="row center-block">
     <div class="center-block col-md-4">  
-    <%= s.label :country, class:"label-domicile" %>
+    <%= s.label "Pais(*)" , class:"label-domicile" %>
     <%= s.text_field :country, autofocus: true , :required => "required", class:"form-control form-domicile" %>
     </div>
     </div>
 
     <div class="row center-block">
     <div class="center-block col-md-4">  
-    <%= s.label :province, class:"label-domicile" %>
+    <%= s.label "Provincia(*)", class:"label-domicile" %>
     <%= s.text_field :province, autofocus: true , :required => "required", class:"form-control form-domicile" %>
     </div>
     </div>
      <div class="row center-block">
     <div class="center-block col-md-4">  
-    <%= s.label :city, class:"label-domicile" %>
+    <%= s.label "Ciudad(*)", class:"label-domicile" %>
     <%= s.text_field :city, autofocus: true , :required => "required", class:"form-control form-domicile" %>
     </div>
     </div>
 
     <div class="row center-block">
     <div class="center-block col-md-4">  
-    <%= s.label :street, class:"label-domicile" %>
+    <%= s.label "Calle(*)", class:"label-domicile" %>
     <%= s.text_field :street, autofocus: true , :required => "required", class:"form-control form-domicile" %>
     </div>
     </div>
 
     <div class="row center-block">
     <div class="center-block col-md-4">  
-    <%= s.label :number, class:"label-domicile" %>
+    <%= s.label "Numero(*)", class:"label-domicile" %>
     <%= s.text_field :number, autofocus: true , :required => "required", class:"form-control form-domicile" %>
     </div>
     </div>
@@ -108,29 +126,37 @@
 
 
 
-
-
-
-
-
-<div>Tarjetas de credito</div>
+<div>Tarjeta de credito <em>(Opcional)</em> </div>
 <ul>
-<!-- 
-    t.integer :number
-      t.string :owner
-      t.date :expireDate
-      t.integer :securityCode -->
-
-
-
    <%= f.fields_for :credit_cards, CreditCard.new do |c| %>
    <div class="row center-block">
     <div class="center-block col-md-4">  
-    <%= c.label :number, class:"label-creditcard" %>
+    <%= c.label "Propietario", class:"label-creditcard" %>
+    <%= c.text_field :owner, autofocus: true , class:"form-control form-creditcard" %>
+    </div>
+    </div>
+
+    <div class="row center-block">
+    <div class="center-block col-md-4">  
+    <%= c.label "Numero", class:"label-creditcard" %>
     <%= c.text_field :number, autofocus: true , class:"form-control form-creditcard" %>
     </div>
     </div>
-       
+
+    <div class="row center-block">
+    <div class="center-block col-md-4">  
+    <%= c.label "Vencimiento", class:"label-creditcard" %><br>
+    <%= c.date_select :expireDate, :order => [:month, :year],start_year:Date.today.year,end_year:Date.today.year+5, autofocus: true, class:"form-control" %>
+    </div>
+    </div>
+
+    <div class="row center-block">
+    <div class="center-block col-md-1">  
+    <%= c.label "Codigo de seguridad", class:"label-creditcard" %><br>
+    <%= c.text_field :securityCode, autofocus: true, class:"form-control" %>
+    </div>
+    </div>
+   
    <% end %>
    </ul>
 

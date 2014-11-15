@@ -61,7 +61,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   protected
-    def configure_permitted_parameters###Esto no es el problema################################
+    def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :DNI, :phone, :birthDate, :password, :current_password, :password_confirmation, domicile_attributes: [:city, :street, :province, :country, :number], credit_cards_attributes: [:owner, :expireDate, :securityCode, :number])  }
       devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :DNI, :phone, :birthDate, :current_password, :password, :password_confirmation, domicile_attributes: [:city, :street, :province, :country, :number], credit_cards_attributes: [:owner, :expireDate, :securityCode, :number])  }
  

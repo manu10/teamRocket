@@ -53,4 +53,4 @@ gem 'hirb'
 
 
 #Gema para mostrar los errores#
-gem "dynamic_form"
+#gem "dynamic_form"

@@ -15,13 +15,13 @@
   
                 <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
 
-                <li><%= link_to 'Fecha de creacion ascendente', sort: "created_at", direction:"asc" %></li>
+                <li><%= link_to 'Mas recientes', sort: "created_at", direction:"asc" %></li>
 
-                <li><%= link_to 'Fecha de creacion descendente', sort: "created_at", direction:"desc" %></li>
+                <li><%= link_to 'Mas antiguas', sort: "created_at", direction:"desc" %></li>
 
-                <li><%= link_to 'Vencimiento de subasta ascendente', sort: "vencimiento", direction:"asc" %></li>
+                <li><%= link_to 'A punto de expirar', sort: "vencimiento", direction:"asc" %></li>
 
-                <li><%= link_to 'Vencimiento de subasta descendente', sort: "vencimiento", direction:"desc" %></li>
+                <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"desc" %></li>
 
   </ul>
 </div>
@@ -34,7 +34,7 @@
   <dt><%= producto.descripcion %></dt>
   <dd></dd>
   <dt>Publicado: </dt>
-  <dd><%= producto.created_at %></dd>
+  <dd><%= producto.fecha %></dd>
   <dt>Vencimiento: </dt>
   <dd><%= producto.vencimiento %></dd>
   <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>

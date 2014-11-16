@@ -8,16 +8,26 @@
 
 </head>
 <body>
-<%= render 'layouts/header' %>
+
+<div class="container center">
+
+<div class="jumbotron center">
+	<%= render 'layouts/header' %>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<div class="container">
-<%= yield %>
+<p>Star icon on a button:
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-star"></span> Star
+        </button>
+      </p>     
+      <%= yield %>
+
 <%= render 'layouts/footer' %>
+</div>
 </div>
 </body>
 </html>

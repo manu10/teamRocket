@@ -2,6 +2,7 @@ class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
 
   def index
+
      if params[:search]
     @productos = Producto.search(params[:search]).order("created_at DESC")
   else
@@ -9,6 +10,8 @@ class ProductosController < ApplicationController
     @productos=Producto.order(sort_column + ' ' + sort_direction)
 
   end
+  @productos=Producto.paginate(page: params[:page], :per_page => 3)
+
   end
   
 

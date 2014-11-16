@@ -54,3 +54,7 @@ gem 'hirb'
 
 #Gema para mostrar los errores#
 #gem "dynamic_form"
+
+#Gemas para paginacion
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'

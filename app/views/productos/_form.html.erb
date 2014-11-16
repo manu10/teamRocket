@@ -18,15 +18,15 @@
     <%= f.label :descripcion %><br>
     <%= f.text_field :descripcion %>
   </div>
-   <div class="field">
-    <%= f.label :UrlImage %><br>
+    <div class="field">
+    <%= f.label :'URL de la imagen' %><br>
     <%= f.text_field :UrlImage %>
   </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :vencimiento %><br>
     <%= f.date_select :vencimiento, start_year:Date.today.year,end_year:Date.today.year+1 %>
   </div>
   <div class="actions">
-    <%= f.submit "Actualizar producto" %>
+    <%= f.submit "Crear producto" %>
   </div>
 <% end %>

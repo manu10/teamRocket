@@ -1,7 +1,7 @@
 class Producto < ActiveRecord::Base
+	belongs_to :user
 	has_many :comments, dependent: :destroy
-	mount_uploader :image, ImageUploader
-validate :expiration_date_cannot_be_in_the_past
+	validate :expiration_date_cannot_be_in_the_past
  
   def expiration_date_cannot_be_in_the_past
     if vencimiento.present? && vencimiento < Date.today

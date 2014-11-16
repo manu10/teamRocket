@@ -30,6 +30,7 @@ class ProductosController < ApplicationController
 
   def create
     @producto = Producto.new(producto_params)
+    @producto.user_id=current_user.id
     @producto.save
 
     redirect_to productos_path 
@@ -63,7 +64,7 @@ class ProductosController < ApplicationController
     end
 
     def producto_params
-      params.require(:producto).permit(:image, :fecha, :titulo, :descripcion, :vencimiento, :usuario_id, :UrlImage)
+      params.require(:producto).permit(:titulo, :descripcion, :vencimiento, :usuario_id, :UrlImage)
     end
 
      def sort_column

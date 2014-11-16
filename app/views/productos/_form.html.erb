@@ -19,7 +19,7 @@
   -->
   <div class="field">
     <%= f.label :fecha %><br>
-    <%= f.date_select :fecha %> 
+    <%= f.date_select :fecha, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %> 
   </div>
   <div class="field">
     <%= f.label :titulo %><br>
@@ -35,7 +35,7 @@
   </div>
    <div class="field">
     <%= f.label :vencimiento %><br>
-    <%= f.date_select :vencimiento, start_year:Date.today.year,end_year:Date.today.year+1 %>
+    <%= f.date_select :vencimiento, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, start_year:Date.today.year,end_year:Date.today.year+1 %>
   </div>
   <div class="field">
     <%= f.label :usuario_id %><br>

@@ -2,16 +2,6 @@
 
 
 <img src="<%=@producto.UrlImage%>" alt="Smiley face" >
-<p>
-  <strong>Imagen:</strong>
-
-  <%= image_tag @producto.image_url() if @producto.image? %>
-</p>
-
-<p>
-  <strong>Fecha:</strong>
-  <%= @producto.fecha %>
-</p>
 
 <p>
   <strong>Titulo:</strong>
@@ -28,9 +18,11 @@
   <%= @producto.vencimiento %>
 </p>
 
+LO SIGUIENTE ES SOLO PARA CONTROL
+<!-- LO SIGUIENTE ES SOLO PARA CONTROL -->
 <p>
   <strong>Usuario:</strong>
-  <%= @producto.usuario_id %>
+  <%= @producto.user_id %>
 </p>
 
 <h2>Comentarios</h2>

@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113225942) do
+ActiveRecord::Schema.define(version: 20141115202236) do
+
+  create_table "add_column_to_users", force: true do |t|
+    t.string   "name"
+    t.integer  "DNI"
+    t.string   "street"
+    t.integer  "numStreet"
+    t.string   "city"
+    t.string   "province"
+    t.string   "country"
+    t.date     "datebirth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -48,15 +67,21 @@ ActiveRecord::Schema.define(version: 20141113225942) do
   add_index "domiciles", ["user_id"], name: "index_domiciles_on_user_id"
 
   create_table "productos", force: true do |t|
-    t.string   "image"
-    t.date     "fecha"
     t.string   "titulo"
-    t.string   "descripcion"
+    t.text     "descripcion", limit: 255
     t.date     "vencimiento"
-    t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "UrlImage"
+    t.integer  "user_id"
+  end
+
+  add_index "productos", ["user_id"], name: "index_productos_on_user_id"
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -76,6 +101,7 @@ ActiveRecord::Schema.define(version: 20141113225942) do
     t.date     "birthDate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -15,9 +15,9 @@
   
                 <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
 
-                <li><%= link_to 'Antiguas', sort: "fecha", direction:"asc" %></li>
+                <li><%= link_to 'Antiguas', sort: "created_at", direction:"asc" %></li>
 
-                <li><%= link_to 'Recientes', sort: "fecha", direction:"desc" %></li>
+                <li><%= link_to 'Recientes', sort: "created_at", direction:"desc" %></li>
 
                 <li><%= link_to 'A punto de expirar', sort: "vencimiento", direction:"asc" %></li>
 
@@ -33,9 +33,9 @@
   <dt><%= producto.descripcion %></dt>
   <dd></dd>
   <dt>Publicado: </dt>
-  <dd><%= producto.created_at %></dd>
+  <dd><%= producto.created_at.strftime("%d de %B de %Y") %></dd>
   <dt>Vencimiento: </dt>
-  <dd><%= producto.vencimiento %></dd>
+  <dd><%= producto.vencimiento.strftime("%d de %B de %Y") %></dd>
   <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
  <% if user_signed_in? and current_user.id=producto.user_id %>
  <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>

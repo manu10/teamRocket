@@ -10,20 +10,7 @@
       </ul>
     </div>
   <% end %>
-<<<<<<< HEAD
 
-<!--  <div class="field">
-    <%= f.label :image %><br>
-    <!-- <%= f.file_field :image %> --> <!--
-    <%= f.text_field :image %>
-  </div> 
-  -->
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.date_select :fecha, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %> 
-  </div>
-=======
->>>>>>> f7fb32c627ad1e438e8fc5a99dadca16be322af5
   <div class="field">
     <%= f.label :titulo %><br>
     <%= f.text_field :titulo %>
@@ -38,7 +25,7 @@
   </div>
    <div class="field">
     <%= f.label :vencimiento %><br>
-    <%= f.date_select :vencimiento, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, start_year:Date.today.year,end_year:Date.today.year+1 %>
+    <%= f.date_select :vencimiento,:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day,:month,:year],start_year:Date.today.year,end_year:Date.today.year+1 %>
   </div>
   <div class="actions">
     <%= f.submit "Crear producto" %>

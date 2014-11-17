@@ -10,12 +10,14 @@ Producto.find_or_create_by( titulo: 'Llama',descripcion: 'Llama adulta oriunda d
 Producto.find_or_create_by( titulo: 'Espejo',descripcion: 'Espejo sin marco. Medidas: 0.8m x 1.2m',vencimiento: '2015-04-22', UrlImage: 'http://40.media.tumblr.com/ad056adadfeeced7f24f918a843a0f60/tumblr_nbsf4rGZFE1tlipbuo1_1280.jpg')
 Producto.find_or_create_by( titulo: 'Kriptonita',descripcion: '200 gramos de Kriptonita',vencimiento: '2015-06-5', UrlImage: 'http://41.media.tumblr.com/8e08757ed8fd1c3368e29dc127140ef1/tumblr_nbsewqvU231tlipbuo1_1280.jpg')
 Producto.find_or_create_by( titulo: 'Aceite y Vinagre',descripcion: '200ml de aceite y 300ml de vinagre. No incluye fascos',vencimiento: '2015-06-24', UrlImage: 'http://40.media.tumblr.com/f92d39b2c62cf2bc5398797db35ce37d/tumblr_nbsejfmSt21tlipbuo1_400.jpg')
-Producto.find_or_create_by( titulo: "ojota", descripcion: "Una lindas hawaianas")
-Producto.find_or_create_by( titulo: "ojota", descripcion: "Una lindas hawaianas")
+Producto.find_or_create_by( titulo: "ojota", descripcion: "Una lindas hawaianas",vencimiento: '2015-06-5')
+Producto.find_or_create_by( titulo: "ojota", descripcion: "Una lindas hawaianas",vencimiento: Date.today)
+=begin
 99.times do |n|
   titulo  = "example-#{n+1}"
   Producto.find_or_create_by( titulo: titulo, descripcion: "Una lindas hawaianas")
 end
+=end
 
 llama = Producto.where(titulo: "Llama").first
 kript = Producto.where(titulo: "Kriptonita").first
@@ -33,4 +35,4 @@ Comment.find_or_create_by(producto: guant, mensaje: "te da fuerza sobre humana a
 ['registered', 'admin'].each do |role|
   Role.find_or_create_by({name: role})
 end
-User.find_or_create_by(  name:"Pepe Argento ", DNI: 23565777, phone: 02345615222, birthDate: 11-11-1990)
+User.find_or_create_by(  name:"Pepe Argento ", DNI: 23565777, phone: 02345615222, birthDate: '1990-11-11')

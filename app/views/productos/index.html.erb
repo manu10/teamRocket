@@ -39,7 +39,8 @@
 
 <div class="row">
     <% @productos.each do |producto| %> 
-  <div class="row container center subasta" >
+    <% if producto.vencimiento > Date.today %>
+  <div class="row container subasta" >
   <dt><%= producto.titulo %> </dt>
   <img src="<%=producto.UrlImage%>" class="img-thumbnail test" alt="SIN IMAGEN" style="max-width: 15%; max-height: 15%;">
 
@@ -49,18 +50,20 @@
               <% end %></dt>
   <dd></dd>
   <dt>Publicado: </dt>
-  <dd><%= producto.created_at %></dd>
+  <dd><%= producto.created_at.strftime('%d-%m-%Y') %></dd>
   <dt>Vencimiento: </dt>
-  <dd><%= producto.vencimiento %></dd>
+  <dd><%= producto.vencimiento.strftime('%d-%m-%Y') %></dd>
   <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
   <% if user_signed_in? and current_user.id=producto.user_id %>
   <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>
   <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>
-  <% end %>
+  <% end %><!-- End del if user_signed_in? and current_user.id=producto.user_id -->
   </div>
-  <% end %>
-<% end %><br>
-  </div>
+  <% end %><!-- End del if producto.vencimiento > Date.today -->
+  <% end %><!-- End del .each -->
+</div>
+<% end %> <!-- End del else -->
+  
   <%= will_paginate %>
 
 

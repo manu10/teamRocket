@@ -50,10 +50,16 @@ textarea {
   margin-bottom: 10px;
 }
 .jumbotron{
-  background-color: #B0C4DE;
+
+
+    background: -webkit-linear-gradient(#C2C2C2,#6A7C8E,#C2C2C2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#C2C2C2,#6A7C8E,#C2C2C2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#C2C2C2,#6A7C8E,#C2C2C2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#C2C2C2,#6A7C8E,#C2C2C2);/* Standard syntax (must be last) */
 }
+  
 #header{
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 3px 3px 5px #888888;
 }
 #text-sombreado{
 /*http://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow_tut*/
@@ -68,6 +74,7 @@ img.test {
 img.test:hover {
     opacity: 1.0;
     filter: alpha(opacity=100); /* For IE8 and earlier */
+    cursor: pointer;
 }
 div.subasta {
   border: 2px solid #a1a1a1;
@@ -77,4 +84,14 @@ div.subasta {
     border-radius: 10px;
     margin: 20px;
   border-style: ridge;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 5px 5px 3px #888888;
+}
+ul.pagination{
+  box-shadow: 5px 5px 3px #888888;
+}
+img.img-thumbnail{
+  box-shadow: 5px 5px 3px #888888;
 }

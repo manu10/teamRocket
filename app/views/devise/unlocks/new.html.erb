@@ -1,4 +1,4 @@
-<h2>Resend unlock instructions</h2>
+<h2>Reenviar instrucciones de desbloqueo</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -7,12 +7,12 @@
   <div class="field col-md-4 center-block" >
     
     <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, type: "email", class:"form-control", id: "exampleInputEmail1", placeholder: "Enter email" %>
+    <%= f.email_field :email, autofocus: true, type: "email", class:"form-control", id: "exampleInputEmail1", placeholder: "Ingresar e-mail" %>
   </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
+    <%= f.submit "Reenviar instrucciones para desbloquear" %>
   </div>
 <% end %>
 

@@ -1,5 +1,7 @@
 class Producto < ActiveRecord::Base
 	belongs_to :user
+	
+  has_many :categories
 	has_many :comments, dependent: :destroy
 	validate :expiration_date_cannot_be_in_the_past
 	

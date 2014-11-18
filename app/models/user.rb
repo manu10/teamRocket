@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :domicile 
   before_create :set_default_role
 
+
  
 
 

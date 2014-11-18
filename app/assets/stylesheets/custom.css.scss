@@ -19,12 +19,32 @@
     font-size: 0.9em;
     height: 30px;
 } 
-/* Set the fixed height of the footer here */
 
-  .footer{
-    height: 60px;
-    background-color: #f9f9f9;
+/* FOOTER */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+    }
+  small {
+    float: left;
   }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}  
 
 html {
   overflow-y: scroll;
@@ -94,4 +114,26 @@ ul.pagination{
 }
 img.img-thumbnail{
   box-shadow: 5px 5px 3px #888888;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: CENTER;
+  font-weight: normal;
+  color: #00308f;
 }

@@ -22,6 +22,9 @@ class CommentsController < ApplicationController
   def create
      @producto = Producto.find(params[:producto_id])
     @comment = @producto.comments.new(comment_params)
+    if user_signed_in? 
+        @comment.user_id = current_user.id
+    end
     if @producto.save
       redirect_to producto_path(@producto), notice:"se ha publicado tu comentario"
     else

@@ -34,6 +34,11 @@ LO SIGUIENTE ES SOLO PARA CONTROL
 <%= render "comments/form" %> 
 </p> 
   
-
-<%= link_to 'Editar producto', edit_producto_path(@producto) %> 
+<% if user_signed_in? %>
+	<% if current_user.id=@producto.user_id %>
+		<%= link_to 'Editar producto', edit_producto_path(@producto) %>
+	<% else %>
+		<%link_to 'Realizar oferta','#' %> 
+	<% end %>
+<%end %>
 <%= link_to 'Atras', productos_path %>

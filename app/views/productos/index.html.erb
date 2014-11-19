@@ -53,6 +53,8 @@
   <dd><%= producto.created_at.strftime('%d-%m-%Y') %></dd>
   <dt>Vencimiento: </dt>
   <dd><%= producto.vencimiento.strftime('%d-%m-%Y') %></dd>
+  <dt>Categoria: </dt>
+  <dd><%=Category.find(producto.category_id).name %></dd>
   <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
   <% if user_signed_in? and current_user.id=producto.user_id %>
   <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>

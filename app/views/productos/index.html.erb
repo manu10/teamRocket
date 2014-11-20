@@ -33,29 +33,33 @@
 </div>
 
 </div>
-
-
 <%= will_paginate %>
+ <%= t('hello') %>
 
 <div class="row">
     <% @productos.each do |producto| %> 
     <% if producto.vencimiento > Date.today %>
   <div class="row container subasta" >
   <dt><%= producto.titulo %> </dt>
+  
   <img src="<%=producto.UrlImage%>" class="img-thumbnail test" alt="SIN IMAGEN" style="max-width: 15%; max-height: 15%;">
 
-  <dt><%= producto.descripcion[0, 99] %>
-              <% if producto.descripcion.length > 100 %>
-                <span> <%= link_to "(ver más...)", producto %></span>
+  <dt><%= producto.descripcion[0, 50] %>
+              <% if producto.descripcion.length > 50 %>
+                <span> <%= link_to "ver mas...", producto %></span>
               <% end %></dt>
   <dd></dd>
   <dt>Publicado: </dt>
-  <dd><%= producto.created_at.strftime('%d-%m-%Y') %></dd>
-  <dt>Vencimiento: </dt>
-  <dd><%= producto.vencimiento.strftime('%d-%m-%Y') %></dd>
+  <dd><%= localize producto.created_at, format: :long %></dd>
+  <dt>Vence: </dt>
+  <dd><%= localize producto.vencimiento, format: :long %></dd>
   <dt>Categoria: </dt>
   <dd><%=Category.find(producto.category_id).name %></dd>
   <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
+  
+
+
+
   <% if user_signed_in? and current_user.id=producto.user_id %>
   <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>
   <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>

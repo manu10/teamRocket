@@ -1,6 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
 <img src="<%=@producto.UrlImage%>" alt="Sin Imagen" class="img-thumbnail">
 
 <p>
@@ -29,16 +26,19 @@ LO SIGUIENTE ES SOLO PARA CONTROL
 <%= render @producto.comments %>
 </p>
 
-
+<%if !user_signed_in? || current_user.id!=@producto.user_id %>
 <h2>Añadir un comentario:</h2> 
 <%= render "comments/form" %> 
 </p> 
+<% end %>
   
 <% if user_signed_in? %>
-	<% if current_user.id=@producto.user_id %>
+	<% if current_user.id==@producto.user_id %>
 		<%= link_to 'Editar producto', edit_producto_path(@producto) %>
-	<% else %>
-		<%link_to 'Realizar oferta','#' %> 
+    <%= link_to 'Ver ofertas', [@producto],
+        method: :indexOferts %>
+    <%else %>  
+		<%=link_to 'Realizar oferta', new_producto_ofert_path(@producto)%> 
 	<% end %>
 <%end %>
 <%= link_to 'Atras', productos_path %>

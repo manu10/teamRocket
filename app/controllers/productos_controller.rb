@@ -1,5 +1,5 @@
 class ProductosController < ApplicationController
-  before_action :set_producto, only: [:show, :edit, :update, :destroy]
+  before_action :set_producto, only: [:show, :edit, :update, :destroy, :indexOferts]
 
   def index
 
@@ -33,15 +33,24 @@ class ProductosController < ApplicationController
   def create
     @producto = Producto.new(producto_params)
     @producto.user_id=current_user.id
-    @producto.save
+    
+     if @producto.save
+      redirect_to(productos_path , notice:"se ha Creado correctamente tu subasta")
+    else 
+      redirect_to(productos_path ,alert:"Tu subasta no se ha creado ")
+    end
 
-    redirect_to productos_path 
   end
 
   def update
-  @producto.update(producto_params)
+    if @producto.update(producto_params)
+      redirect_to(productos_path , notice:"se ha actualizado correctamente tu subasta")
+    else 
+      redirect_to producto_path(@producto),alert:"Tu subasta no se ha actualizado "
+    end
   
-    redirect_to productos_path 
+  
+    
 
 
   #    if @producto.vencimiento <= Date.today
@@ -58,6 +67,10 @@ class ProductosController < ApplicationController
     if @producto.destroy
     redirect_to productos_path 
     end
+  end
+
+  def indexOferts
+    @oferts=@producto.oferts.order("created_at DESC")
   end
 
   private

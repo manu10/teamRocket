@@ -25,7 +25,7 @@
   </div>
    <div class="field">
     <%= f.label :vencimiento %><br>
-    <%= f.date_select :vencimiento,:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day,:month,:year],start_year:Date.today.year,end_year:Date.today.year+1, default: 30.days.from_now %>
+    <%= f.date_select :vencimiento,:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day,:month,:year],start_year:Date.today.year,end_year:Date.today.year+1, default: 29.days.from_now %>
   </div>
    <div class="field">
     <%= f.label "categoria" %><br>

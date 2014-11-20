@@ -1,0 +1,12 @@
+<tr>
+    <td ><%=ofert.motivacion %></td>
+    <td >
+    	<% if @producto.vencimiento > Date.today %>
+    	<%= link_to "Ganador!!!",'#' ,type:"button" ,class:"btn btn-warning",disabled:"disabled" %>
+    <% else %>
+    	<%= link_to "Ganador!!!",'#' ,type:"button" ,class:"btn btn-warning" %>
+    <%end%>
+</td>
+</tr>
+
+

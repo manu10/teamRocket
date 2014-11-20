@@ -3,8 +3,12 @@ class Producto < ActiveRecord::Base
 	belongs_to :category
   	
 	has_many :comments, dependent: :destroy
+	has_many :oferts, dependent: :destroy
 	validate :expiration_date_cannot_be_in_the_past
-	
+	validates :UrlImage, allow_blank: false, format: {
+      with: %r{\.(gif|jpg|jpeg|png)$}i, :multiline => true,
+      message: 'URL must point to GIT/JPG/PNG pictures'
+  }
 
  
   def expiration_date_cannot_be_in_the_past

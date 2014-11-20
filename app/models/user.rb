@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :credit_cards, dependent: :destroy
   has_many :comments,dependent: :destroy
+  has_many :oferts,dependent: :destroy
   has_one :domicile, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

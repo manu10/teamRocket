@@ -1,4 +1,4 @@
-<%if @producto.comments.count == 0%>
+<%if @producto.comments.count == 0 %>
         <h3>Sin comentarios</h3>
 <% else %>
   <p>
@@ -8,15 +8,18 @@
   </p>
 
   <% if user_signed_in? %>
+      <% if current_user.id==comment.user_id %>
       <% if current_user.id=@producto.user_id %>
   <p> <%= link_to 'Eliminar comentario', [comment.producto, comment],
                method: :delete,
                data: { confirm: '¿Está seguro de que quiere eliminar su comentario?' } %>
       <%= link_to 'Editar comentario', edit_producto_comment_path(comment.producto , comment) %>
-      <% elsif current_user.role='admin' %>
+        <%= link_to 'Responder','#'%>  
+      <% elsif current_user.role.name=="admin" %>
         <%= link_to 'Responder','#'%>
       <%end%>
   <%end%>
   </p>
+<% end %>
 <% end %>
     

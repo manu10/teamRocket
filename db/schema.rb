@@ -66,6 +66,18 @@ ActiveRecord::Schema.define(version: 20141118102717) do
 
   add_index "domiciles", ["user_id"], name: "index_domiciles_on_user_id"
 
+  create_table "oferts", force: true do |t|
+    t.text     "motivacion"
+    t.integer  "dinero"
+    t.integer  "user_id"
+    t.integer  "producto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oferts", ["producto_id"], name: "index_oferts_on_producto_id"
+  add_index "oferts", ["user_id"], name: "index_oferts_on_user_id"
+
   create_table "productos", force: true do |t|
     t.string   "titulo"
     t.text     "descripcion", limit: 255

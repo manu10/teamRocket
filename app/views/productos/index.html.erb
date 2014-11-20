@@ -51,21 +51,18 @@
   <dd></dd>
   <dt>Publicado: </dt>
   <dd><%= localize producto.created_at, format: :long %></dd>
-  <dt>Vencimiento: </dt>
-<<<<<<< HEAD
-  <dd><%= producto.vencimiento.strftime('%d-%m-%Y') %></dd>
-  <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
-  <% if user_signed_in? and current_user.id==producto.user_id %>
-=======
+  <dt>Vence: </dt>
   <dd><%= localize producto.vencimiento, format: :long %></dd>
   <dt>Categoria: </dt>
   <dd><%=Category.find(producto.category_id).name %></dd>
+  <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
+  <% if user_signed_in? and current_user.id==producto.user_id %>
+  
 
 
 
   <%= link_to 'Mostrar producto <i class="icon-arrow-up"></i>'.html_safe, producto, class:'btn btn-default' %>
   <% if user_signed_in? and current_user.id=producto.user_id %>
->>>>>>> 640cba23ee985ebab804e153861271905f522cdc
   <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>
   <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>
   <% end %><!-- End del if user_signed_in? and current_user.id=producto.user_id -->
@@ -74,7 +71,7 @@
   <% end %><!-- End del .each -->
 </div>
 <% end %> <!-- End del else -->
-  
+  <% end %>
   <%= will_paginate %>
 
 

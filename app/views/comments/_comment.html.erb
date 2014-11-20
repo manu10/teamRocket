@@ -14,7 +14,7 @@
                data: { confirm: '¿Está seguro de que quiere eliminar su comentario?' } %>
       <%= link_to 'Editar comentario', edit_producto_comment_path(comment.producto , comment) %>
         <%= link_to 'Responder','#'%>  
-      <% elsif current_user.role.name=="adin" %>
+      <% elsif current_user.role.name=="admin" %>
         <%= link_to 'Responder','#'%>
       <%end%>
   <%end%>

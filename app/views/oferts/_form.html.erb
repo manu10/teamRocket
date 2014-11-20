@@ -1,0 +1,17 @@
+<%= form_for([@producto, @ofert]) do |f| %>
+<% if @ofert.errors.any? %>
+      <ul>
+         <% @ofert.errors.each do |mensaje| %>
+         <li> <%= mensaje %> </li>
+         <% end %>
+      </ul>
+   <% end %>
+  <p>
+    <%= f.label "Detalle por qué le interesa el producto:" %><br>
+    <%= f.text_area :motivacion , {value:@mensaje,cols:80,rows:5} %>
+    <%= f.label "Ingrese el dinero ofrecido por el producto (mínimo $1):" %><br>
+    $<%= f.text_field :dinero, value: "1" %>
+  <p>
+    <%= f.submit "Finalizar" %>
+  </p>
+<% end %>

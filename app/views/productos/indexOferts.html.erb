@@ -1,0 +1,14 @@
+<% if @oferts.size()== 0 %>
+	<h3>No existen ofertas para este producto.</h3>
+<% else %>
+<div class="table-responsive">
+<table class="table table-hover">
+	<tr>
+		<th> Motivo </th>
+		<th> Elegir ganador</th>
+	</tr>
+  <%= render @oferts %>
+ </table>
+</div>
+<%= link_to "Regresar a mi producto", @producto %>
+<% end %>

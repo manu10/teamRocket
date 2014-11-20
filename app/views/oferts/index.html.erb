@@ -1,0 +1,13 @@
+<h1>Tus ofertas</h1>
+<table>
+<tr>
+<th> Motivo </th>
+<th> Dinero ofrecido </th>
+</tr>
+<% @oferts.all.each do |of| %>
+<tr>
+<td> <h3><%= of.motivacion%></h3> </td>
+<td> <h3><%= of.dinero %></h3> <%= link_to "Modificar valor",edit_ofert_path(of) %></td>
+</tr>
+<% end %>
+</table>

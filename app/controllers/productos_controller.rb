@@ -1,5 +1,5 @@
 class ProductosController < ApplicationController
-  before_action :set_producto, only: [:show, :edit, :update, :destroy]
+  before_action :set_producto, only: [:show, :edit, :update, :destroy, :indexOferts]
 
   def index
 
@@ -58,6 +58,10 @@ class ProductosController < ApplicationController
     if @producto.destroy
     redirect_to productos_path 
     end
+  end
+
+  def indexOferts
+    @oferts=@producto.oferts.order("created_at DESC")
   end
 
   private

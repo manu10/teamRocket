@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  motivacion: MyText
+  dinero: 1
+  user_id: 
+  producto_id: 
+
+two:
+  motivacion: MyText
+  dinero: 1
+  user_id: 
+  producto_id: 

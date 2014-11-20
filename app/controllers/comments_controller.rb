@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-     @producto = Producto.find(params[:producto_id])
+    @producto=Producto.find(params[:producto_id])
     @comment = @producto.comments.new(comment_params)
     if user_signed_in? 
         @comment.user_id = current_user.id

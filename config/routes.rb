@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
   
+  resources :oferts
+  get 'oferts/index'
+
+  get 'oferts/show'
+
+  get 'oferts/new'
+
+  get 'oferts/edit'
+
+  get 'oferts/create'
+
+  get 'oferts/update'
+
+  get 'oferts/destroy'
 
 resources :credit_cards
   get 'credit_cards/new'
@@ -28,15 +42,18 @@ resources :credit_cards
   
   get 'ayuda' => 'static_pages#ayuda' 
   get 'contacto' => 'static_pages#contacto'
+  get 'listadoOfertas' => 'static_pages#listadoOfertas'
 
   
  
   resources :productos do
     resources :comments
+    resources :oferts
   end
 
 
 get 'productos/search' => 'productos#search'
+post 'productos/:id' => 'productos#indexOferts'
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

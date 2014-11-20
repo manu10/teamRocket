@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115202236) do
+ActiveRecord::Schema.define(version: 20141118020720) do
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -65,6 +65,18 @@ ActiveRecord::Schema.define(version: 20141115202236) do
   end
 
   add_index "domiciles", ["user_id"], name: "index_domiciles_on_user_id"
+
+  create_table "oferts", force: true do |t|
+    t.text     "motivacion"
+    t.integer  "dinero"
+    t.integer  "user_id"
+    t.integer  "producto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oferts", ["producto_id"], name: "index_oferts_on_producto_id"
+  add_index "oferts", ["user_id"], name: "index_oferts_on_user_id"
 
   create_table "productos", force: true do |t|
     t.string   "titulo"

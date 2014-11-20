@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141118020720) do
+=======
+ActiveRecord::Schema.define(version: 20141118102717) do
+>>>>>>> 640cba23ee985ebab804e153861271905f522cdc
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -86,8 +90,10 @@ ActiveRecord::Schema.define(version: 20141118020720) do
     t.datetime "updated_at"
     t.text     "UrlImage"
     t.integer  "user_id"
+    t.integer  "category_id"
   end
 
+  add_index "productos", ["category_id"], name: "index_productos_on_category_id"
   add_index "productos", ["user_id"], name: "index_productos_on_user_id"
 
   create_table "roles", force: true do |t|

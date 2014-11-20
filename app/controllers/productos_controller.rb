@@ -70,7 +70,7 @@ class ProductosController < ApplicationController
     end
 
     def producto_params
-      params.require(:producto).permit(:titulo, :descripcion, :vencimiento, :usuario_id, :UrlImage)
+      params.require(:producto).permit(:titulo, :descripcion, :vencimiento, :usuario_id,:category_id, :UrlImage)
     end
 
      def sort_column

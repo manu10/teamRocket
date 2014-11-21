@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'user/show'
+
   resources :oferts
   get 'oferts/index'
 

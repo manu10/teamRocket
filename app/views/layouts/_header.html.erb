@@ -63,7 +63,7 @@
     <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
   
- <div class="nav navbar-nav navbar-right"> <li><%= link_to 'Editar perfil', edit_user_registration_path%> </li></div>
+ <div class="nav navbar-nav navbar-right"> <li><%= link_to 'Ver Perfil', user_show_path %> </li></div>
   <div class="nav navbar-nav navbar-right"><li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete%></li><br></div>
    <strong class="nav navbar-nav navbar-right">Logged in as <%= current_user.email %></strong>
 <% else %>

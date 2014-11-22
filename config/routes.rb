@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  resources :contacts
   
+  get 'contacts/new'
+
+  get 'contacts/create'
+
   resources :oferts
   get 'oferts/index'
 

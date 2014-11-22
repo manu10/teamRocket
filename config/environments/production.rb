@@ -87,8 +87,8 @@ config.action_mailer.smtp_settings = {
       port: 587,
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: "facundo1021511@gmail.com",
-      password: "ElRubyOnRails" 
+      user_name: "bestnidproject@gmail.com",
+      password: "TeamRocket" 
 
   }
   

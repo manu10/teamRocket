@@ -6,8 +6,13 @@
          <% end %>
       </ul>
    <% end %> 
-  <p><%= f.label "Elija el motivo por el cual desea contactarnos" %>
-     <%= f.select :motivo, :option => ['Error en la pagina', 'Sobre el uso de la página', 'Saludar al administrador', 'Otros'], class:"form-control" %>
+  <p>
+    <% if !user_signed_in? %>
+        <%= f.label "Ingrese su email" %>
+        <%= f.text_field :user_email, :required => "required" %><br>
+    <% end %>
+    <%= f.label "Elija el motivo por el cual desea contactarnos" %>
+    <%= f.select :motivo, :option => ['Error en la pagina', 'Sobre el uso de la página', 'Saludar al administrador', 'Otros'], class:"form-control" %>
     <%= f.label "Escriba su mensaje:" %><br>
     <%= f.text_area :contenido, autofocus: true , :required => "required", class:"form-control" %>
   </p>

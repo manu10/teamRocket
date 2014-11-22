@@ -11,7 +11,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 
-  config.mailer_sender = 'facundo1021511@gmail.com'
+  config.mailer_sender = 'bestnidproject@gmail.com'
 
   # Configure the class responsible to send e-mails.
   config.mailer = 'admin_mailer'

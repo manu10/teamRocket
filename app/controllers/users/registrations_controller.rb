@@ -2,7 +2,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   before_filter :configure_permitted_parameters, :only => [:create, :update, :new]
   before_action :set_user, only: [:edit, :update, :destroy]
-
  # GET /resource/sign_up
 
 

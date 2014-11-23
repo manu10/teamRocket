@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+ 
+  resources :contacts
   
-  get 'user/show'
+  get 'contacts/new'
+
+  get 'contacts/create'
 
   resources :oferts
   get 'oferts/index'
@@ -25,6 +29,9 @@ resources :credit_cards
   get 'credit_cards/set_credit_card'
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
+  
+  get 'user/show'
+
   get 'comments/index' 
 
   get 'comments/show' => 'comments#show'

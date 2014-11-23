@@ -107,6 +107,7 @@ div.subasta {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  word-wrap: break-word;
   box-shadow: 5px 5px 3px #888888;
 }
 ul.pagination{
@@ -176,13 +177,25 @@ padding: 5px;
 }
  
 #error_explanation ul li {
-font-size: 12px;
+font-size: 16px;
 list-style: square;
 }
 
 
 
+div.margen{
+  margin-top: 10px;
+}
 
 
 
-
+#titulo{
+font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  text-align: CENTER;
+  font-weight: normal;
+  text-shadow: 0.5px 0.5px #580000 ;   
+  text-decoration: underline;
+  text-transform: capitalize;  
+}

@@ -1,76 +1,70 @@
 
 <% if @productos.size==0 %>
-<h1>No se encontraron subastas</h1>
-        
-      <% else %>
-      
-      <h1>Subastas Vigentes  </h1>
-
-
+  <h1>No se encontraron subastas</h1>
+<% else %>
+  <h1>Subastas Vigentes  </h1>
   <div class="row">
-
-  <% if user_signed_in? %>
-<%= link_to 'SUBASTAR!', new_producto_path, class:"btn btn-primary ",type:"button" %>
-<% end %>
-     <div class="btn-group">
-  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-    Ordenar <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-  
-                <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
-
-                <li><%= link_to 'Mas recientes', sort: "created_at", direction:"asc" %></li>
-
-                <li><%= link_to 'Mas antiguas', sort: "created_at", direction:"desc" %></li>
-
-                <li><%= link_to 'A punto de expirar', sort: "vencimiento", direction:"asc" %></li>
-
-                <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"desc" %></li>
-
-  </ul>
-  
-</div>
-
-</div>
-<%= will_paginate %>
- <%= t('hello') %>
-
-<div class="row">
+    <% if user_signed_in? %>
+      <%= link_to 'SUBASTAR!', new_producto_path, class:"btn btn-primary pull-right" %>
+    <% end %>
+    <div class="btn-group">
+      <button type="button" class="btn btn-info dropdown-toggle pull-right " data-toggle="dropdown"> Ordenar <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
+        <li><%= link_to 'Mas recientes', sort: "created_at", direction:"desc" %></li>
+        <li><%= link_to 'Mas antiguas', sort: "created_at", direction:"asc" %></li>
+        <li><%= link_to 'A punto de expirar', sort: "vencimiento", direction:"desc" %></li>
+        <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"asc" %></li>
+      </ul>
+    </div><!-- Btn-group -->
+    </div><!-- ROW de los botones-->
+  <div class="row center">
+    <%= will_paginate %>
+    <%= t('hello') %>
+  </div><!-- row -->
+  <div class="row">
     <% @productos.each do |producto| %> 
     <% if producto.vencimiento > Date.today %>
-  <div class="row container subasta" >
-  <dt><%= producto.titulo %> </dt>
-  
-  <img src="<%=producto.UrlImage%>" class="img-thumbnail test" alt="SIN IMAGEN" style="max-width: 15%; max-height: 15%;">
-
-  <dt><%= producto.descripcion[0, 50] %>
-              <% if producto.descripcion.length > 50 %>
-                <span> <%= link_to "ver mas...", producto %></span>
-              <% end %></dt>
-  <dd></dd>
-  <dt>Publicado: </dt>
-  <dd><%= localize producto.created_at, format: :long %></dd>
-  <dt>Vence: </dt>
-  <dd><%= localize producto.vencimiento, format: :long %></dd>
-  <dt>Categoria: </dt>
-  <dd><%=Category.find(producto.category_id).name %></dd>
-  <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
-  
-
-
-
-  <% if user_signed_in? and current_user.id=producto.user_id %>
-  <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>
-  <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>
-  <% end %><!-- End del if user_signed_in? and current_user.id=producto.user_id -->
+      <div class="row container subasta" >
+      <div class="row">
+        <dt id="titulo"><%= producto.titulo %> </dt>
+        <div class=" col-md-6">
+          <%= link_to producto do %>
+              <%= image_tag producto.UrlImage, title: producto.titulo, class:'img-thumbnail test', alt:'SIN IMAGEN', style:'max-width: 100%; max-height: 100%;'%>
+              <% end %></a>
+        </div>
+        <div class=" col-md-6">
+          <dt><%= producto.descripcion[0, 100] %>
+          <% if producto.descripcion.length > 100 %>
+            <span> <%= link_to "ver mas...", producto %></span>
+          <% end %></dt>
+          <dd></dd>
+          <dt>Publicado: </dt>
+          <dd><%= localize producto.created_at, format: :long %></dd>
+          <dt>Vence: </dt>
+          <dd><%= localize producto.vencimiento, format: :long %></dd>
+          <dt>Categoria: </dt>
+          <dd><%=Category.find(producto.category_id).name %></dd>
+        </div>
+      </div><!-- Cierre div row de datos y foto -->
+      <div class="row center margen">
+            <%= link_to 'Mostrar producto', producto, class:'btn btn-default' %>
+            <% if user_signed_in? and current_user.id=producto.user_id %>
+              <%= link_to 'Editar producto', edit_producto_path(producto), class:'btn btn-default' %>
+              <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>
+            <% end %><!-- End del if user_signed_in? and current_user.id=producto.user_id -->
+      </div><!-- Cierre row botones -->
+    </div><!-- Cierre div de continer subasta  -->
+    <% end %><!-- End del if producto.vencimiento > Date.today -->
+    <% end %><!-- End del .each -->
+   
+  </div><!-- row  del each-->
+  <div class="row center">
+    <%= will_paginate %>
   </div>
-  <% end %><!-- End del if producto.vencimiento > Date.today -->
-  <% end %><!-- End del .each -->
-</div>
 <% end %> <!-- End del else -->
   
-  <%= will_paginate %>
 
 
 

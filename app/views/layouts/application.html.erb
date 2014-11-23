@@ -5,31 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
-<body>
-
-<div class="container center">
-
-<div class="jumbotron center">
-	<%= render 'layouts/header' %>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-<p>Star icon on a button:
-        <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-star"></span> Star
-        </button>
-        <span class="glyphicon glyphicon-cloud"></span>
-        <span class="glyphicon glyphicon-search"></span>
-      </p>     
-      <%= yield %>
-
-<%= render 'layouts/footer' %>
-</div>
-</div>
-</body>
+  <body>
+    <div class="container">
+      <div class=" row ">
+        <%= render 'layouts/header' %>
+      </div><!-- row -->
+      <div class=" row jumbotron"> 
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+        <div class=" row ">
+        <%= render 'layouts/footer' %>
+        </div><!-- footer -->
+        </div><!-- jumbotron -->
+    </div><!-- container -->
+  </body>
 </html>

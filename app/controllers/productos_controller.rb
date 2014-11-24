@@ -37,7 +37,7 @@ class ProductosController < ApplicationController
      if @producto.save
       redirect_to(productos_path , notice:"se ha Creado correctamente tu subasta")
     else 
-      redirect_to(productos_path ,alert:"Tu subasta no se ha creado ")
+      render :new
     end
 
   end
@@ -46,7 +46,7 @@ class ProductosController < ApplicationController
     if @producto.update(producto_params)
       redirect_to(productos_path , notice:"se ha actualizado correctamente tu subasta")
     else 
-      redirect_to producto_path(@producto),alert:"Tu subasta no se ha actualizado "
+      render :edit
     end
   
   

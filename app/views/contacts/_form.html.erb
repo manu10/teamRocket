@@ -6,17 +6,48 @@
          <% end %>
       </ul>
    <% end %> 
-  <p>
+ 
+<fieldset>
+    <legend>Formulario de contacto</legend>
+    <p>
     <% if !user_signed_in? %>
-        <%= f.label "Ingrese su email" %>
-        <%= f.text_field :user_email, :required => "required" %><br>
+      <div class="control-group">
+        <%= f.label "Ingrese su email:", class:'control-label' %>
+        <div class="controls">
+          <%= f.text_field :user_email, required:"required",type:"email",class:'text_field'  %>(nombre@dominio.com)
+        </div>
+      </div>
     <% end %>
-    <%= f.label "Elija el motivo por el cual desea contactarnos" %>
-    <%= f.select :motivo, :option => ['Error en la pagina', 'Sobre el uso de la página', 'Saludar al administrador', 'Otros'], class:"form-control" %>
-    <%= f.label "Escriba su mensaje:" %><br>
-    <%= f.text_area :contenido, autofocus: true , :required => "required", class:"form-control" %>
-  </p>
-  <p>
-    <%= f.submit "Enviar" %>
-  </p>
+    </p>
+    
+    <p>
+    <div class="control-group">
+      <%= f.label "Indique el motivo de su mensaje:", class:'control-label' %>
+      <div class="controls">
+        <%= f.select :motivo,['Error en la pagina', 'Sobre el uso de la página', 'Saludar al administrador', 'Otros'],class:'form-control'  %>
+      </div>
+    </div>
+    </p>
+
+    <p>
+    <div class="control-group">
+      <%= f.label "Escriba su mensaje:", class:'control-label' %>
+      <div class="controls">
+        <%= f.text_area :contenido, autofocus:true, required:"required" ,class:'form-control'  %>
+      </div>
+    </div>
+    </p>
+    
+    <div class="control-group">
+        <div class="col-sm-9 col-sm-offset-3">
+            <ul id="errors"></ul>
+        </div>
+    </div>
+    
+    <p>
+    <div class="col-sm-12 form-actions">
+      <%= f.submit "Enviar", class:'btn btn-primary' %>
+    </div>
+    </p>
+   </fieldset>
 <% end %>

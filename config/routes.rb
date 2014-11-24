@@ -31,6 +31,7 @@ resources :credit_cards
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   
   get 'user/show'
+  resources :comments
 
   get 'comments/index' 
 

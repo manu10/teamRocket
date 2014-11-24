@@ -4,9 +4,8 @@ class Contact
   extend ActiveModel::Naming
 
   attr_accessor :user_email, :motivo, :contenido
-  VALID_EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :user_email, presence:true,length:{maximum:255},format: { with: VALID_EMAIL_FORMAT }
-  validates :contenido,presence:true,length: {minimum:10, maximum:500}
+  validates :user_email, presence:true,length:{maximum:255}
+  validates :contenido,presence:true,length: {minimum:10, maximum:255}
 
    def initialize(attributes = {})				#
     attributes.each do |user_email, value|

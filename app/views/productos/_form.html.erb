@@ -1,6 +1,7 @@
 <%= form_for(@producto) do |f| %>
+
   <% if @producto.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation">s
       <h2><%= pluralize(@producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
 
       <ul>

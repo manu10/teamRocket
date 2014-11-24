@@ -1,6 +1,6 @@
 class DomicilesController < ApplicationController
 
- before_action :set_domicile only: [:edit, :update, :destroy]
+ before_action :set_domicile, only: [:edit, :update, :destroy]
 ##############TODO ESTO (lo qu esta a continuacion) NO SE USA PARA EDITAR Y CREAR###########
     def show
   end

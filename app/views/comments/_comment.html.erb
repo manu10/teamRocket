@@ -10,6 +10,7 @@
   <% if user_signed_in? %>
       <%if current_user.id == @producto.user_id %>
           <%= link_to 'Responder','#',class:'btn btn-mini btn-success'%>
+      <%end%>
       <% if  current_user.role_id == 2 || current_user.id==comment.user_id %>
          <%= link_to 'Eliminar comentario', [comment.producto, comment],
                method: :delete,

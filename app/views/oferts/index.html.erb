@@ -1,13 +1,15 @@
 <h1>Tus ofertas</h1>
-<table>
+<table class="table">
 <tr>
-<th> Motivo </th>
-<th> Dinero ofrecido </th>
+<th class="col-md-8"> Motivo </th>
+<th class="col-md-2"> Dinero ofrecido </th>
 </tr>
 <% @oferts.all.each do |of| %>
 <tr>
 <td> <h3><%= of.motivacion%></h3> </td>
-<td> <h3><%= of.dinero %></h3> <%= link_to "Modificar valor",edit_ofert_path(of) %></td>
+<td> <h3><%= of.dinero %></h3> </td>
+<td> <h3><%= link_to "Modificar valor",edit_ofert_path(of),class:'btn btn-primary' %></h3></td>
 </tr>
+
 <% end %>
 </table>

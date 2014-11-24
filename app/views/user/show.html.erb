@@ -1,7 +1,9 @@
 <h1>Perfil de Usuario </h1>
-<div class="nav navbar-nav navbar-right"> <li><%= link_to 'Editar perfil', edit_user_registration_path%> </li></div>
-
+<div class="nav navbar-nav navbar-right"><li><%= link_to 'Editar perfil', edit_user_registration_path%> </li></div>
+<div class="nav navbar-nav navbar-left"><li><%= link_to "Ver mis ofertas", oferts_path(user_id:current_user.id) %><li></div>
 <p>Find me in app/views/user/show.html.erb</p>
+
+
 
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->

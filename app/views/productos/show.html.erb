@@ -22,12 +22,13 @@ LO SIGUIENTE ES SOLO PARA CONTROL
   <%= @producto.user_id %>
 </p>
 
+<p>
 <h2>Comentarios</h2>
 <%= render @producto.comments %>
 </p>
 
+<p>
 <%if !user_signed_in? || current_user.id!=@producto.user_id %>
-<h2>Añadir un comentario:</h2> 
 <%= render "comments/form" %> 
 </p> 
 <% end %>

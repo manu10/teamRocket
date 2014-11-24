@@ -8,14 +8,14 @@
   </p>
   <p>
   <% if user_signed_in? %>
-      <% if current_user.id==comment.user_id || current_user.role_id == 2 %>
+      <%if current_user.id == @producto.user_id %>
+          <%= link_to 'Responder','#',class:'btn btn-mini btn-success'%>
+      <% elsif current_user.id==comment.user_id || current_user.role_id == 2 %>
          <%= link_to 'Eliminar comentario', [comment.producto, comment],
                method: :delete,
                data: { confirm: '¿Está seguro de que quiere eliminar su comentario?' } , class:'btn btn-mini btn-danger' %>
-            <% if current_user.id!=comment.user_id %>
-               <%= link_to 'Responder','#',class:'btn btn-mini btn-success'%>
-            <% else %>
-               <%= link_to 'Editar comentario', edit_producto_comment_path(comment.producto , comment) , class:'btn btn-mini btn-warning' %>
+            <% if current_user.role_id!=2 %>
+                 <%= link_to 'Editar comentario', edit_producto_comment_path(comment.producto , comment) , class:'btn btn-mini btn-warning' %>
             <% end %>
       <%end%>
   <%end%>

@@ -1,4 +1,18 @@
-<%= form_for([@producto, @comment]) do |f| %>
+<style type="text/css">
+/* Simple message styles customization */
+#errors {
+    border-left: 5px solid #a94442;
+    padding-left: 15px;
+}
+#errors li {
+    list-style-type: none;
+}
+#errors li:before {
+    content: '\b7\a0';
+}
+
+</style>
+<%= form_for [@producto, @comment], html:{class:'form-horizontal'} do |f| %>
 <% if @comment.errors.any? %>
       <ul>
          <% @comment.errors.each do |mensaje| %>
@@ -6,11 +20,28 @@
          <% end %>
       </ul>
    <% end %> 
-  <p>
-    <%= f.label "Escriba su comentario:" %><br>
-    <%= f.text_area :mensaje, autofocus: true , :required => "required", class:"form-control" %>
-  </p>
-  <p>
-    <%= f.submit "Hecho" %>
-  </p>
+ <fieldset>
+    <legend>Comentarios</legend>
+    <p>
+    <div class="control-group">
+      <%= f.label "Deje su comentario:", class:'col-sm-3 control-label' %>
+      <div class="col-sm-6 controls">
+        <span class="help-block">(El comentario debe tener entre 5 y 255 caracteres)</span>
+        <%= f.text_area :mensaje,{value:@mensaje,cols:80,rows:5,class:'form-control text_field'}  %>
+      </div>
+    </div>
+    </p>
+    
+    <div class="control-group">
+        <div class="col-sm-9 col-sm-offset-3">
+            <ul id="errors"></ul>
+        </div>
+    </div>
+    
+    <p>
+    <div class="col-sm-12 form-actions">
+      <%= f.submit "Hecho", class:'btn btn-primary' %>
+    </div>
+    </p>
+   </fieldset>
 <% end %>

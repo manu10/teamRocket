@@ -1,0 +1,127 @@
+********************************* 1. row *********************************
+                    id: 12
+                 email: manuel_zurdo_10@hotmail.com
+    encrypted_password: $2a$10$RL.jSJrdfVp.0bbD/PeKMuqGIMdHOcNlPoNHwZqGvyP4y9maSyG8i
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 15:02:43 UTC
+       last_sign_in_at: 2014-11-14 15:02:43 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: manu
+                   DNI: 
+                 phone: 
+             birthDate: 
+            created_at: 2014-11-14 15:02:43 UTC
+            updated_at: 2014-11-14 15:39:27 UTC
+********************************* 2. row *********************************
+                    id: 13
+                 email: euge@sfas.com
+    encrypted_password: $2a$10$eger0I93R3GmfTYDVYs3ZuR2zomRY51RQyGAmmzZR8XKONbZSCVzu
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 15:52:17 UTC
+       last_sign_in_at: 2014-11-14 15:52:17 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: Euge
+                   DNI: 256
+                 phone: 6541231
+             birthDate: 2009-09-14
+            created_at: 2014-11-14 15:52:17 UTC
+            updated_at: 2014-11-14 15:52:17 UTC
+********************************* 3. row *********************************
+                    id: 14
+                 email: manuel_10@hotmail.com
+    encrypted_password: $2a$10$wNaElDDoF46FebLxLSBng.2b2G4bu1t64BYhPSZNkhh8cDDIEv0UG
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 18:12:02 UTC
+       last_sign_in_at: 2014-11-14 18:12:02 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: Manuel Garcia
+                   DNI: 36039057
+                 phone: 234615514794
+             birthDate: 2014-11-14
+            created_at: 2014-11-14 18:12:02 UTC
+            updated_at: 2014-11-14 18:12:02 UTC
+********************************* 4. row *********************************
+                    id: 15
+                 email: manu_10@hotmail.com
+    encrypted_password: $2a$10$8IsVLYlK4W9FbppPjnp1meJSQxleiCLqxjOOTGwNQ7DrDNSjlI5o6
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 18:15:14 UTC
+       last_sign_in_at: 2014-11-14 18:15:14 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: pepe argento
+                   DNI: 36039058
+                 phone: 33123
+             birthDate: 2014-11-14
+            created_at: 2014-11-14 18:15:14 UTC
+            updated_at: 2014-11-14 18:15:14 UTC
+********************************* 5. row *********************************
+                    id: 16
+                 email: manuel__10@hotmail.com
+    encrypted_password: $2a$10$RZHppAZT8RLMAZdoCcXIhukX.JOQs2r/xA1co0kArggnAzi8pK4Vu
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 20:25:38 UTC
+       last_sign_in_at: 2014-11-14 20:25:38 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: Manuel Garcia
+                   DNI: 36039059
+                 phone: 54564
+             birthDate: 2009-11-14
+            created_at: 2014-11-14 20:25:38 UTC
+            updated_at: 2014-11-14 20:25:38 UTC
+********************************* 6. row *********************************
+                    id: 17
+                 email: mu_10@hotmail.com
+    encrypted_password: $2a$10$iIyXMB6MF6DPQPESVfHFKO1SG9kXrpweNGWcwZntJk8F5.yWQnlOu
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 20:43:52 UTC
+       last_sign_in_at: 2014-11-14 20:43:52 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: Manuel gARCIA
+                   DNI: 36258256
+                 phone: 12312
+             birthDate: 2014-11-14
+            created_at: 2014-11-14 20:43:52 UTC
+            updated_at: 2014-11-14 20:43:52 UTC
+********************************* 7. row *********************************
+                    id: 18
+                 email: maiz10@hotmail.com
+    encrypted_password: $2a$10$wJ1SuU21eipdsA96Bzo.hOyQqMoKIWWI05ZOe.IE9zQcAB2cV7pCy
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2014-11-14 20:48:50 UTC
+       last_sign_in_at: 2014-11-14 20:48:50 UTC
+    current_sign_in_ip: 127.0.0.1
+       last_sign_in_ip: 127.0.0.1
+                  name: Manuel Garcia
+                   DNI: 46039057
+                 phone: 234615514794
+             birthDate: 2014-11-16
+            created_at: 2014-11-14 20:48:50 UTC
+            updated_at: 2014-11-14 20:48:50 UTC
+7 rows in set

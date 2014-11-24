@@ -1,4 +1,4 @@
-<%= form_for([@producto, @ofert]) do |f| %>
+<%= form_for [@producto, @ofert],html:{class:'form-horizontal'} do |f| %>
 <% if @ofert.errors.any? %>
       <ul>
          <% @ofert.errors.each do |mensaje| %>
@@ -6,12 +6,30 @@
          <% end %>
       </ul>
    <% end %>
+  <fieldset>
+  <legend>Realize su oferta</legend>
   <p>
-    <%= f.label "Detalle por qué le interesa el producto:" %><br>
-    <%= f.text_area :motivacion , {value:@mensaje,cols:80,rows:5} %>
-    <%= f.label "Ingrese el dinero ofrecido por el producto (mínimo $1):" %><br>
-    $<%= f.text_field :dinero, value: "1" %>
-  <p>
-    <%= f.submit "Finalizar" %>
+    <div class:"control-group">
+       <%= f.label "Detalle por qué le interesa el producto:",class:'col-sm-3 control-label' %>
+       <div class="col-sm-6 controls">
+          <%= f.text_area :motivacion , {value:@mensaje,required:"required",cols:80,rows:5,class:'form-control text_field'} %>
+       </div>
+    </div>
   </p>
+  
+  <p>
+    <div class:"control-group">
+    <%= f.label "Ingrese el dinero ofrecido por el producto (mínimo $1):",class:'control-label' %><br>
+       <div class:"controls">
+         $<%= f.text_field :dinero, value: "1",class:'text_field' %>
+       </div>
+    </div>
+  </p>
+
+  <p>
+    <div class:"col-sm-12 form-actions">
+        <%= f.submit "Finalizar", class:'btn btn-primary' %>
+    </div>
+  </p>
+</fieldset>
 <% end %>

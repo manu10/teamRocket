@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     if @producto.save
       redirect_to producto_path(@producto), notice:"se ha publicado tu comentario"
     else
-      render "new"
+      render "edit"
     end
   end
 

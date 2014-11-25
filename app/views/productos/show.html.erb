@@ -39,7 +39,7 @@ LO SIGUIENTE ES SOLO PARA CONTROL
     <%= link_to 'Ver ofertas', [@producto],
         method: :indexOferts %>
     <%else %>  
-		    <%=link_to 'Realizar oferta', new_producto_ofert_path(@producto)%> 
+		    <%=link_to 'Realizar oferta', new_producto_ofert_path(@producto), class: 'btn btn-primary' %> 
 	<% end %>
 <%end %>
 <form>

@@ -4,6 +4,10 @@
 	<%=link_to 'Cancelar', @producto %>
 <% else %>
 	<h3> Ya ha realizado una oferta para este producto</h3>
-	<%=link_to 'Volver atras', @producto %>
+	<form>
+<div class "btn btn-primary ">
+  <input type="button" value="Volver atras" name="Back2" onclick="history.back()" />
+  </div>
+ </form>
 <% end %>
 

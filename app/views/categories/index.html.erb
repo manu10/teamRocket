@@ -1,9 +1,10 @@
 <h1>Categorías</h1>
 
 <%= link_to 'Crear categoría', new_category_path, class: 'btn btn-default' %>
-
-<table class="table">
-
+<% if @categories.size == 0 %>
+  <tr> <td colspan="3"> No hay categorías </td> </tr>
+<% else %>
+  <table class="table">
   <tr>
     <th> Nombre </th>
     <th> Acciones </th>
@@ -18,9 +19,5 @@
       </td>
     </tr>
   <% end %>
-
-  <% if @categories.size == 0 %>
-    <tr> <td colspan="3"> No hay categorías </td> </tr>
-  <% end %>
-
+<% end %>
 </table>

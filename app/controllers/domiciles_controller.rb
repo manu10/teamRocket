@@ -1,7 +1,7 @@
 class DomicilesController < ApplicationController
 
  before_action :set_domicile, only: [:edit, :update, :destroy]
-##############TODO ESTO (lo qu esta a continuacion) NO SE USA PARA EDITAR Y CREAR###########
+##############TODO ESTO (lo qu esta a continuacion) NO SE USA PARA EDITAR Y CREAR desde la vista con devise###########
     def show
   end
 
@@ -17,7 +17,7 @@ class DomicilesController < ApplicationController
   end
 
   def create
-    @domicile = Domicile.new(domicile_params)
+    @domicile = Domicile.new(domicile_param)
     @domicile.save
   end
 
@@ -39,5 +39,5 @@ class DomicilesController < ApplicationController
     def domicile_params
       params.require(:domicile).permit(:city, :street, :province, :country, :number)
     end
-##############TODO ESTO (lo qu esta arriba) NO SE USA PARA EDITAR Y CREAR###########
+##############TODO ESTO (lo qu esta arriba) NO SE USA PARA EDITAR Y CREAR desde la vista con devise###########
 end

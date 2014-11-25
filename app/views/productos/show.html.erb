@@ -30,8 +30,8 @@ LO SIGUIENTE ES SOLO PARA CONTROL
 <p>
 <%if !user_signed_in? || current_user.id!=@producto.user_id %>
 <%= render "comments/form" %> 
-</p> 
 <% end %>
+</p> 
   
 <% if user_signed_in? %>
 	<% if current_user.id==@producto.user_id %>

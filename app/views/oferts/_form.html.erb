@@ -30,6 +30,40 @@
   </p>
 
   <p>
+  <%if current_user.credit_cards.count==0 %>
+    <div>Datos de la tarjeta de crédito</div>
+    <ul>
+        <%= f.fields_for :credit_cards, CreditCard.new do |c| %>
+        <div class="row center-block">
+          <div class="center-block col-md-4">  
+             <%= c.label "Propietario", class:"label-creditcard" %>
+             <%= c.text_field :owner, autofocus: true , required:"required", class:"form-control form-creditcard" %>
+          </div>
+        </div>
+        <div class="row center-block">
+            <div class="center-block col-md-4">  
+                <%= c.label "Numero", class:"label-creditcard" %>
+                <%= c.text_field :number, autofocus: true, required:"required" , class:"form-control form-creditcard" %>
+            </div>
+        </div>
+        <div class="row center-block">
+            <div class="center-block col-md-4">  
+                <%= c.label "Vencimiento", class:"label-creditcard" %><br>
+                <%= c.date_select :expireDate, :order => [:month, :year],start_year:Date.today.year,end_year:Date.today.year+5, autofocus: true, required:"required", class:"form-control" %>
+            </div>
+        </div>
+        <div class="row center-block">
+           <div class="center-block col-md-1">  
+           <%= c.label "Codigo de seguridad", class:"label-creditcard" %><br>
+           <%= c.text_field :securityCode, autofocus: true, required:"required", class:"form-control" %>
+           </div>
+        </div>
+        <% end %>
+     </ul>      
+  <% end %>
+  </p>
+
+  <p>
     <div class:"col-sm-12 form-actions">
         <%= f.submit "Finalizar", class:'btn btn-primary' %>
     </div>

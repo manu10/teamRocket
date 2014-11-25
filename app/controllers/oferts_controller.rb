@@ -38,7 +38,7 @@ class OfertsController < ApplicationController
    @ofert.dinero = @dinero;
    @producto=Producto.find(@ofert.producto_id)
    if @ofert.save()
-      redirect_to edit_user_registration_path, :notice => "Se ha modificado el dinero ofrecido";
+      redirect_to oferts_path(user_id:current_user.id), :notice => "Se ha modificado el dinero ofrecido";
    else
       render "edit";
    end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121025920) do
+ActiveRecord::Schema.define(version: 20141125125105) do
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20141121025920) do
     t.datetime "updated_at"
   end
 
+  create_table "answers", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comment_id"
+  end
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -35,7 +42,6 @@ ActiveRecord::Schema.define(version: 20141121025920) do
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.text     "mensaje"
-    t.text     "respuesta"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "producto_id"

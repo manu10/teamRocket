@@ -1,16 +1,19 @@
-<%if @producto.comments.count == 0 %>
+<%if @producto.comments.size() == 0 %>
         <h3>Sin comentarios</h3>
 <% else %>
-  <p>
-    <Strong>Comentario:</Strong>
-    <%= comment.mensaje %><br>
-    <Strong>Respuesta:</Strong><%=comment.respuesta %>
-  </p>
+  <ul style='font-size: 1.4em'>
+    <li> <b style='color:#002147'>Comentario:</b><%= comment.mensaje %></li>
+      <% if comment.answer %> 
+      <ul style='font-size: 1em'>
+        <li><b style='color:#800020'>Respuesta:</b><%=comment.answer.content %></li>
+      </ul>
+      <% end %>
+    </ul>
   <p>
   <% if user_signed_in? %>
-      <%if current_user.id == @producto.user_id %>
-          <%= link_to 'Responder','#',class:'btn btn-mini btn-success'%>
-      <%end%>
+      <% if !comment.answer && current_user.id==@producto.user_id %>
+          <%= link_to 'Responder',new_producto_comment_answer_path(@producto,comment),class:'btn btn-mini btn-success'%>
+      <% end %>
       <% if  current_user.role_id == 2 || current_user.id==comment.user_id %>
          <%= link_to 'Eliminar comentario', [comment.producto, comment],
                method: :delete,

@@ -31,13 +31,22 @@ kript = Producto.where(titulo: "Kriptonita").first
 esp = Producto.where(titulo: "Espejo").first
 guant = Producto.where(titulo: "Guantes de acero").first
 
-Comment.find_or_create_by(producto: llama, mensaje: "Como se LLAMA?", respuesta: "Maria de las Mercedes")
+Comment.find_or_create_by(producto: llama, mensaje: "Como se LLAMA?")
 
-Comment.find_or_create_by(producto: kript, mensaje: "Conoces a Superman?", respuesta: "No")
+Comment.find_or_create_by(producto: kript, mensaje: "Conoces a Superman?")
 
-Comment.find_or_create_by(producto: esp, mensaje: "por que lo subastas?", respuesta: "Porque no me veo bien")
+Comment.find_or_create_by(producto: esp, mensaje: "por que lo subastas?")
 
-Comment.find_or_create_by(producto: guant, mensaje: "te da fuerza sobre humana al usarlo?", respuesta: "SI :)")
+Comment.find_or_create_by(producto: guant, mensaje: "te da fuerza sobre humana al usarlo?")
+
+
+Answer.find_or_create_by(comment_id: "1", content: "Maria de las Mercedes")
+
+Answer.find_or_create_by(comment_id: "2", content: "No")
+
+Answer.find_or_create_by(comment_id: "3", content: "Porque no me veo bien")
+
+Answer.find_or_create_by(comment_id: "4", content: "SI :)")
 
 ['registered', 'admin'].each do |role|
   Role.find_or_create_by({name: role})

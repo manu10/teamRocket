@@ -1,8 +1,7 @@
 <%= form_for(@producto) do |f| %>
-
   <% if @producto.errors.any? %>
-    <div id="error_explanation">s
-      <h2><%= pluralize(@producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producto.errors.count, "error") %> no permiten que este producto se pueda guardar:</h2>
 
       <ul>
       <% @producto.errors.full_messages.each do |message| %>

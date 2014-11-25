@@ -42,4 +42,8 @@ LO SIGUIENTE ES SOLO PARA CONTROL
 		    <%=link_to 'Realizar oferta', new_producto_ofert_path(@producto)%> 
 	<% end %>
 <%end %>
-<%= link_to 'Atras', productos_path %>
+<form>
+<div class "btn btn-primary ">
+  <input type="button" value="Atras" name="Back2" onclick="history.back()" />
+  </div>
+ </form>

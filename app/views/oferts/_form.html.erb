@@ -30,10 +30,9 @@
   </p>
 
   <p>
-  <%if current_user.credit_cards.count==0 %>
     <div>Datos de la tarjeta de crédito</div>
     <ul>
-        <%= f.fields_for :credit_cards, CreditCard.new do |c| %>
+        <%= f.fields_for :credit_card, @current_user.credit_card do |c| %>
         <div class="row center-block">
           <div class="center-block col-md-4">  
              <%= c.label "Propietario", class:"label-creditcard" %>
@@ -60,7 +59,6 @@
         </div>
         <% end %>
      </ul>      
-  <% end %>
   </p>
 
   <p>

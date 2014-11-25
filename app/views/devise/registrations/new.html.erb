@@ -123,17 +123,11 @@
     </div>
    
    <% end %>
+   
    </ul>
-
-
-
-
-
-
-
 <div>Tarjeta de credito <em>(Opcional)</em> </div>
 <ul>
-   <%= f.fields_for :credit_cards, CreditCard.new do |c| %>
+   <%= f.fields_for :credit_card, CreditCard.new do |c| %>
    <div class="row center-block">
     <div class="center-block col-md-4">  
     <%= c.label "Propietario", class:"label-creditcard" %>
@@ -151,7 +145,7 @@
     <div class="row center-block">
     <div class="center-block col-md-4">  
     <%= c.label "Vencimiento", class:"label-creditcard" %><br>
-    <%= c.date_select :expireDate, :order => [:month, :year],start_year:Date.today.year,end_year:Date.today.year+5, autofocus: true, class:"form-control" %>
+    <%= c.date_select :expireDate, :order => [:month, :year],default:Date.today+1.year,start_year:Date.today.year,end_year:Date.today.year+5, autofocus: true, class:"form-control" %>
     </div>
     </div>
 

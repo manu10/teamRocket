@@ -1,10 +1,12 @@
 <h1>Perfil de Usuario </h1>
-<div class="nav navbar-nav navbar-right"> <li><%= link_to 'Editar perfil', edit_user_registration_path%> </li></div>
+<div class="nav navbar-nav navbar-right"><li><%= link_to 'Editar perfil', edit_user_registration_path, class:'btn btn-primary'%> </li></div>
+<div class="nav navbar-nav navbar-left"><li><%= link_to "Ver mis ofertas", oferts_path(user_id:current_user.id), class:'btn btn-primary' %><li></div>
+<div class="nav navbar-nav navbar-center"><li><%= link_to "Ver mis subastas",class:'btn btn-primary'%><li></div>
 
-<p>Find me in app/views/user/show.html.erb</p>
 
+<!--
 <nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
+  
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -15,7 +17,7 @@
     <a class="navbar-brand" href="#">Brand</a>
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
+  
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Link</a></li>
@@ -49,5 +51,7 @@
         </ul>
       </li>
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>
+
+-->

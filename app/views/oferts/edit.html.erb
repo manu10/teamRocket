@@ -13,6 +13,8 @@
     <%= f.label "Dinero ofrecido (mínimo $1):" %><br>
     $<%= f.text_field :dinero, value: @ofert.dinero %>
   <p>
-    <%= f.submit "Finalizar" %>
+    <%= f.submit "Finalizar", class:'btn btn-primary' %>
+    <%= link_to "Cancelar", oferts_path(user_id:current_user.id),class:'btn btn-secondary' %>
   </p>
+  
  <% end %>

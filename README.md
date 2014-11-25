@@ -19,3 +19,23 @@ nuestro sitio Heroku que utiliza la mencionada Base de datos.
 
 *Navegador/es web: Google Chrome/Mozilla Firefox/Safari/Opera/Internet Explorer
 
+Una vez que se tiene clonado el repositorio localmente se deben realizar lo siguiente:
+
+Instalar dependencias (gemas):
+Desde consola, ejecutar 
+
+bundle install
+
+Configurar la base de datos:
+Desde consola Ejecutar:
+"rake db:setup rake db:migrate"
+
+Para correr la aplicacion en un servidor local:
+Desde consola ejecutar:
+
+"rails server"
+
+La aplicacion estará corriendo en la direción localhost:3000, a la cual se puede acceder desde cualquier navegador web 
+Para probar desde consola funcionalidades de la aplicacion se puede ejecutar:
+
+"rails console"

@@ -52,6 +52,9 @@ resources :credit_cards
   
   get 'ayuda' => 'static_pages#ayuda' 
 
+  resources :user
+  get 'user/show' => 'user#show_sale'
+
   
  
   resources :productos do

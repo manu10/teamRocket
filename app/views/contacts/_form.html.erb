@@ -1,11 +1,15 @@
 <%= form_for([@contact]) do |f| %>
 <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> Problema al enviar el mensaje:</h2>
+
       <ul>
-         <% @contact.errors.each do |mensaje| %>
-         <li> <%= mensaje %> </li>
-         <% end %>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li>El <%= message %></li>
+      <% end %>
       </ul>
-   <% end %> 
+    </div>
+  <% end %>
  
 <fieldset>
     <legend>Formulario de contacto</legend>

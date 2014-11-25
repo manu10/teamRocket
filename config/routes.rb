@@ -51,8 +51,6 @@ resources :credit_cards
 
   
   get 'ayuda' => 'static_pages#ayuda' 
-  get 'contacto' => 'static_pages#contacto'
-  get 'listadoOfertas' => 'static_pages#listadoOfertas'
 
   
  
@@ -61,7 +59,7 @@ resources :credit_cards
     resources :oferts
   end
 
-
+post 'oferts/:id' => 'oferts#select_winner'
 get 'productos/search' => 'productos#search'
 post 'productos/:id' => 'productos#indexOferts'
   get 'welcome/index'

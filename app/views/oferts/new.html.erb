@@ -1,3 +1,9 @@
 <h1>Ofertas</h1>
-<%= render 'form' %>
-<%=link_to 'Cancelar', @producto %>
+<% if @control.size == 0 %>
+	<%= render 'form' %>
+	<%=link_to 'Cancelar', @producto %>
+<% else %>
+	<h3> Ya ha realizado una oferta para este producto</h3>
+	<%=link_to 'Volver atras', @producto %>
+<% end %>
+

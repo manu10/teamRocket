@@ -6,12 +6,13 @@ class OfertsController < ApplicationController
   end
 
   def show
-
+    @ofert=Ofert.find(params[:id])
   end
 
   def new
     @producto= Producto.find(params[:producto_id])
     @ofert=Ofert.new()
+    @control=Ofert.where(user_id: current_user.id, producto_id: @producto.id)
   end
 
   def edit
@@ -24,8 +25,9 @@ class OfertsController < ApplicationController
     @ofert.user_id=current_user.id
     @ofert.producto_id = @producto.id
     if @ofert.save
-      redirect_to @producto,notice:"Oferta realizada exitosamente"
+      redirect_to @producto,notice:"Oferta Realizada exitosamente"
     else
+      @control=Ofert.where(user_id: current_user.id, producto_id: @producto.id)
       render "new"
     end
   end
@@ -36,13 +38,19 @@ class OfertsController < ApplicationController
    @ofert.dinero = @dinero;
    @producto=Producto.find(@ofert.producto_id)
    if @ofert.save()
-      redirect_to oferts_path(user_id:current_user.id), :notice => "Se ha modificado el dinero ofrecido";
+      redirect_to edit_user_registration_path, :notice => "Se ha modificado el dinero ofrecido";
    else
       render "edit";
    end
   end
 
   def destroy
+  end
+
+  def select_winner
+    @ofert=Ofert.find(params[:id])
+    @user=@ofert.user
+    UserMailer.winner_notification(@user).deliver
   end
 
   private

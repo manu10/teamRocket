@@ -1,15 +1,25 @@
 <h1>Tus ofertas</h1>
-<table class="table">
-<tr>
-<th class="col-md-8"> Motivo </th>
-<th class="col-md-2"> Dinero ofrecido </th>
-</tr>
-<% @oferts.all.each do |of| %>
-<tr>
-<td> <h3><%= of.motivacion%></h3> </td>
-<td> <h3><%= of.dinero %></h3> </td>
-<td> <h3><%= link_to "Modificar valor",edit_ofert_path(of),class:'btn btn-primary' %></h3></td>
-</tr>
-
+<% if @oferts.size()== 0 %>
+	<h2> No tienes ninguna oferta vigente </h2>
+<% else %> 
+	<div class="table-responsive">
+	<table class="table table-hover">
+		<tr>
+			<th> Producto </th>
+			<th> Motivo </th>
+			<th> Dinero ofrecido </th>
+			<th> Editar monto </th>
+		</tr>
+	<% @oferts.all.each do |of| %>
+	<tr>
+		<td> <%= link_to of.producto do %>
+              <%= image_tag of.producto.UrlImage, title: of.producto.titulo, class:'img-thumbnail test', alt:'SIN IMAGEN', style:'max-width: 50px; max-height: 50px;'%>
+              <% end %></a> </td>
+		<td> <%=truncate(of.motivacion,length:80) {link_to "Ver más...", of,{style:'color:#B31B1B'}}%></td>
+		<div text-align:"center"><td> $<%= of.dinero %></td>
+		<td><%= link_to "Modificar valor",edit_ofert_path(of) %></td>
+	</tr>
+	<% end %>
+	</table>
+	</div>
 <% end %>
-</table>

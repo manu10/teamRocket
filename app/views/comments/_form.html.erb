@@ -1,25 +1,18 @@
-<style type="text/css">
-/* Simple message styles customization */
-#errors {
-    border-left: 5px solid #a94442;
-    padding-left: 15px;
-}
-#errors li {
-    list-style-type: none;
-}
-#errors li:before {
-    content: '\b7\a0';
-}
 
 </style>
 <%= form_for [@producto, @comment], html:{class:'form-horizontal'} do |f| %>
 <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> No se pudo realizar el comentario:</h2>
+
       <ul>
-         <% @comment.errors.each do |mensaje| %>
-         <li> <%= mensaje %> </li>
-         <% end %>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
-   <% end %> 
+    </div>
+  <% end %>
+
  <fieldset>
     <h2>Realizar un comentario:</h2><hr>
     <p>

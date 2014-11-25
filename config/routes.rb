@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
- 
+  resources :answers
+  get 'answers/new'
+
+  get 'answers/create'
+
+  get 'answers/destroy'
+
+  resources :categories
   resources :contacts
   
   get 'contacts/new'
@@ -48,23 +55,22 @@ resources :credit_cards
   get 'comments/update' => 'comments#update'
 
   get 'comments/destroy' => 'comments#destroy'
-
   
   get 'ayuda' => 'static_pages#ayuda' 
 
   
  
   resources :productos do
-    resources :comments
     resources :oferts
+    resources :comments do
+      resources :answers
+    end
   end
 
 post 'oferts/:id' => 'oferts#select_winner'
 get 'productos/search' => 'productos#search'
 post 'productos/:id' => 'productos#indexOferts'
   get 'welcome/index'
-
-  resources :categories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

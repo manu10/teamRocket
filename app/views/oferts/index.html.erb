@@ -17,7 +17,7 @@
               <% end %></a> </td>
 		<td> <%=truncate(of.motivacion,length:80) {link_to "Ver más...", of,{style:'color:#B31B1B'}}%></td>
 		<div text-align:"center"><td> $<%= of.dinero %></td>
-		<td><%= link_to "Modificar valor",edit_ofert_path(of) %></td>
+		<td><%= button_to "Modificar valor",edit_ofert_path(of), class:'btn btn-primary' %></td>
 	</tr>
 	<% end %>
 	</table>

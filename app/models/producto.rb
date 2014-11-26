@@ -27,7 +27,7 @@ class Producto < ActiveRecord::Base
 def self.search(query)
 	if Category.where(name:query).first != nil
 		@cat_id=Category.where(name:query).first.id
-		where("category_id like ?","#{@cat_id}") 
+		where("category_id like @cat_id")
 	else
 	where("titulo like ? or descripcion like ?", "%#{query}%","%#{query}%") 
 	end

@@ -2,7 +2,7 @@
   <h1>No se encontraron subastas</h1>
 <% else %>
   <h1>Subastas Vigentes</h1>
-  <div class="row">
+  <div class="row" id="btn-profile">
     <% if user_signed_in? %>
       <%= link_to 'SUBASTAR!', new_producto_path, class:"btn btn-primary pull-right" %>
     <% end %>
@@ -17,6 +17,28 @@
         <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"asc" %></li>
       </ul>
     </div><!-- Btn-group -->
+<!-- <div class="btn-group">
+      <button type="button" class="btn btn-info dropdown-toggle pull-right " data-toggle="dropdown"> Categorías <span class="caret"></span>
+      </button>
+      
+      <ul class="dropdown-menu" role="menu">
+                  <% Category.order("name asc").each do |c| %>
+                    <li><a href="#"><%= link_to c.name, c %></a></li>
+                  <% end %>
+                </ul>
+    </div><!-- Btn-group categorias --> 
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-info dropdown-toggle pull-right " data-toggle="dropdown"> Categorías <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% Category.order("name asc").each do |c| %>
+          <li><%= link_to c.name, search:c.name %></li>
+        <% end %>
+      </ul>
+    </div><!-- Btn-group categorias -->
+                
+
     </div><!-- ROW de los botones-->
   <div class="row center">
     <%= will_paginate %>

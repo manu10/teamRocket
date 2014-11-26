@@ -17,7 +17,7 @@
       <% if  current_user.role_id == 2 || current_user.id==comment.user_id %>
          <%= link_to 'Eliminar comentario', [comment.producto, comment],
                method: :delete,
-               data: { confirm: '¿Está seguro de que quiere eliminar su comentario?' } , class:'btn btn-mini btn-danger' %>
+               data: { confirm: 'Esta seguro de que quiere eliminar su comentario?' } , class:'btn btn-mini btn-danger' %>
             <% if current_user.id==comment.user_id %>
                  <%= link_to 'Editar comentario', edit_producto_comment_path(comment.producto , comment) , class:'btn btn-mini btn-warning' %>
             <% end %>

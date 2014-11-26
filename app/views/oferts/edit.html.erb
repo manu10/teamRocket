@@ -10,7 +10,7 @@
 <p>
     <%= f.label "Motivo de su oferta" %><br>
     <%= f.text_area :motivacion , {value:@ofert.motivacion,cols:80,rows:5,disabled:"disabled"} %>
-    <%= f.label "Dinero ofrecido (mínimo $1):" %><br>
+    <%= f.label "Dinero ofrecido (minimo $1):" %><br>
     $<%= f.text_field :dinero, value: @ofert.dinero %>
   <p>
     <%= f.submit "Finalizar", class:'btn btn-primary' %>

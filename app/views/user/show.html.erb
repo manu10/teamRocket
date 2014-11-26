@@ -5,7 +5,7 @@
 <%= link_to "Ver mis ofertas", oferts_path(user_id:current_user.id), class:'btn btn-primary' %>
 <%= link_to "Ver mis subastas", user_index_path,class:'btn btn-primary'%>
 <% if current_user.role_id == 2 %>
-      <%= link_to "Ver categorías", categories_path,class:'btn btn-primary'%>
+      <%= link_to "Ver categorias", categories_path,class:'btn btn-primary'%>
 <% end %>
 </ul>
 
@@ -48,7 +48,7 @@
     <label class="col-lg-2 control-label">Domicilio</label>
     <div class="col-lg-10">
       <% domi=current_user.domicile %>
-      <%= "Calle " + domi.street + ", número " + domi.number.to_s + ", " + domi.city + ", provincia de " + domi.province + ", " + domi.country %>
+      <%= "Calle " + domi.street + ", numero " + domi.number.to_s + ", " + domi.city + ", provincia de " + domi.province + ", " + domi.country %>
     </div>
   </div>
 </form>

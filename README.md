@@ -1,6 +1,6 @@
 ## README
 ## BestNid Sitio de subastas ficticio
-Es un proyecto del grupo Team Rocket para la materia Ingenieria de Software de la carrera Ing. en Computacion de la UNLP, con el objetivo de aprender principios y metodologías para el desarrollo y mantenimiento de sistemas software.
+Es un proyecto del grupo Team Rocket para la materia Ingenieria de Software de la carrera Ing. en Computacion de la UNLP, con el objetivo de aprender principios y metodologias para el desarrollo y mantenimiento de sistemas software.
 
 ##Contribuir con BestNid
 
@@ -35,7 +35,7 @@ Desde consola ejecutar:
 
 "rails server"
 
-La aplicacion estará corriendo en la direción localhost:3000, a la cual se puede acceder desde cualquier navegador web 
+La aplicacion estara corriendo en la direcion localhost:3000, a la cual se puede acceder desde cualquier navegador web 
 Para probar desde consola funcionalidades de la aplicacion se puede ejecutar:
 
 "rails console"

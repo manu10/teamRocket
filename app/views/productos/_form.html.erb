@@ -1,8 +1,7 @@
 <%= form_for(@producto) do |f| %>
-
   <% if @producto.errors.any? %>
-    <div id="error_explanation">s
-      <h2><%= pluralize(@producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producto.errors.count, "error") %> no permiten que este producto se pueda guardar:</h2>
 
       <ul>
       <% @producto.errors.full_messages.each do |message| %>
@@ -12,28 +11,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_field :descripcion %>
-  </div>
-    <div class="field">
-    <%= f.label :'URL de la imagen' %><br>
-    <%= f.text_field :UrlImage %>
-  </div>
-   <div class="field">
-    <%= f.label :vencimiento %><br>
-    <%= f.date_select :vencimiento,:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day,:month,:year],start_year:Date.today.year,end_year:Date.today.year+1, default: 30.days.from_now %>
-  </div>
-   <div class="field">
-    <%= f.label "categoria" %><br>
-    <%= f.collection_select :category_id, Category.all , :id, :name %>
-  </div>
-  
+<div class="row center-block">
+    <div class="center-block col-md-4">  
+   
+    <%= f.label :titulo, class:"label-subasta" %><br>
+    <%= f.text_field :titulo, autofocus: true , :required => "required", class:"form-control form-subasta" %>
+    </div>
+    </div>
+
+<div class="row center-block">
+    <div class="center-block col-md-4">  
+   
+    <%= f.label :descripcion, class:"label-subasta" %><br>
+    <%= f.text_field :descripcion, autofocus: true , :required => "required",class:"form-control form-subasta" %>
+    </div>
+    </div>
+
+
+<div class="row center-block">
+    <div class="center-block col-md-4">  
+   
+    <%= f.label :'URL de la imagen', class:"label-subasta" %><br>
+    <%= f.url_field :UrlImage, autofocus: true , :required => "required",class:"form-control form-subasta" %>
+    <%= link_to ayuda_path do %>
+      <%= image_tag "ask_icon.png", title: "Como obtengo la URL?", class: "img-thumbnail", id:"ask-icon"%>
+    <% end %>
+    </div>
+    </div>
+    
+
+<div class="row center-block">
+    <div class="center-block col-md-4">  
+    <%= f.label :vencimiento, class:"label-subasta" %><br>
+    <%= f.date_select :vencimiento,:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day,:month,:year],start_year:Date.today.year,end_year:Date.today.year+1, default: 30.days.from_now, autofocus: true , :required => "required",class:"form-control form-subasta" %>
+    </div>
+    </div>
+<div class="row center-block">
+    <div class="center-block col-md-4">  
+    <%= f.label "categoria", class:"label-subasta" %><br>
+    <%= f.collection_select :category_id, Category.all , :id, :name, autofocus: true , :required => "required",class:"form-control form-subasta" %>
+    </div>
+    </div>
+    
+  <div class="row center-block">
+    <div class="center-block col-md-4">  
   <div class="actions">
-    <%= f.submit "Crear producto" %>
+    <%= f.submit "Crear producto", class:"btn btn-info" %>
   </div>
+    </div>
+    </div>
+    
 <% end %>

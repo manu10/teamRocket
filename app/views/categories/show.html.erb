@@ -1,8 +1,8 @@
 <% if @productos.size==0 %>
   <h1>No se encontraron subastas</h1>
 <% else %>
-  <h1>Subastas Vigentes</h1>
-  <div class="row" id="btn-profile">
+  <h1><%= @category.name %></h1>
+  <div class="row">
     <% if user_signed_in? %>
       <%= link_to 'SUBASTAR!', new_producto_path, class:"btn btn-primary pull-right" %>
     <% end %>
@@ -17,31 +17,9 @@
         <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"asc" %></li>
       </ul>
     </div><!-- Btn-group -->
-<!-- <div class="btn-group">
-      <button type="button" class="btn btn-info dropdown-toggle pull-right " data-toggle="dropdown"> Categorías <span class="caret"></span>
-      </button>
-      
-      <ul class="dropdown-menu" role="menu">
-                  <% Category.order("name asc").each do |c| %>
-                    <li><a href="#"><%= link_to c.name, c %></a></li>
-                  <% end %>
-                </ul>
-    </div><!-- Btn-group categorias --> 
-
-    <div class="btn-group">
-      <button type="button" class="btn btn-info dropdown-toggle pull-right " data-toggle="dropdown"> Categorías <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <% Category.order("name asc").each do |c| %>
-          <li><%= link_to c.name, search:c.name %></li>
-        <% end %>
-      </ul>
-    </div><!-- Btn-group categorias -->
-                
-
     </div><!-- ROW de los botones-->
   <div class="row center">
-    <%= will_paginate %>
+    <%= will_paginate @productos %>
     </div><!-- row -->
   <div class="row">
     <% @productos.each do |producto| %> 
@@ -55,7 +33,7 @@
               <% end %></a>
         </div>
         <div class=" col-md-6">
-          <dt><%= truncate(producto.descripcion, length: 100) %>
+          <dt><%= producto.descripcion[0, 100] %>
           <% if producto.descripcion.length > 100 %>
             <span> <%= link_to "ver mas...", producto %></span>
           <% end %></dt>
@@ -65,7 +43,7 @@
           <dt>Vence: </dt>
           <dd><%= localize producto.vencimiento, format: :long %></dd>
           <dt>Categoria: </dt>
-          <dd><%= link_to Category.find(producto.category_id).name, Category.find(producto.category_id) %></dd>
+          <dd><%=Category.find(producto.category_id).name %></dd>
         </div>
       </div><!-- Cierre div row de datos y foto -->
       <div class="row center margen">
@@ -81,10 +59,10 @@
    
   </div><!-- row  del each-->
   <div class="row center">
-    <%= will_paginate %>
+    <%= will_paginate @productos %>
   </div>
 <% end %> <!-- End del else -->
-  
 
-
-
+  <div class "btn btn-primary ">
+    <input type="button" value="Atras" name="Back2" onclick="history.back()" />
+    </div>

@@ -2,14 +2,15 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   belongs_to :role
-  has_many :credit_cards, dependent: :destroy
+  
   has_many :comments,dependent: :destroy
   has_many :oferts,dependent: :destroy
   has_one :domicile, dependent: :destroy
+  has_one :credit_card, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  accepts_nested_attributes_for :credit_cards
+  accepts_nested_attributes_for :credit_card
   accepts_nested_attributes_for :domicile 
   before_create :set_default_role
 
@@ -33,7 +34,7 @@ class User < ActiveRecord::Base
 
   validate :greater_than_18
   private
- def greater_than_18
+  def greater_than_18
     if birthDate+18.year > Date.today
       errors.add(:birthDate, "Debes ser mayor de edad para poder usar BestNid")
     end

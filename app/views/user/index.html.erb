@@ -4,7 +4,6 @@
 <% else %> 
   <div class="row">
     <% Producto.where(user_id:current_user.id).each do |producto| %> 
-    <% if producto.vencimiento > Date.today %>
       <div class="row container subasta" >
       <div class="row">
         <dt id="titulo"><%= producto.titulo %> </dt>
@@ -33,7 +32,6 @@
             <%= link_to 'Eliminar producto', producto, method: :delete, data: { confirm: '¿Estas seguro?' }, class:'btn btn-danger' %>
       </div><!-- Cierre row botones -->
       </div><!-- Cierre div de continer subasta  -->
-    <% end %><!-- End del if producto.vencimiento > Date.today -->
     <% end %><!-- End del .each -->
   </div>
 <% end %>

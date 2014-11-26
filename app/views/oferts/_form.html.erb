@@ -13,7 +13,7 @@
   <legend>Realize su oferta</legend>
   <p>
     <div class:"control-group">
-       <%= f.label "Detalle por que le interesa el producto:",class:'col-sm-3 control-label' %>
+       <%= f.label "Detalle por qué le interesa el producto:",class:'col-sm-3 control-label' %>
        <div class="col-sm-6 controls">
           <%= f.text_area :motivacion , {value:@mensaje,required:"required",cols:80,rows:5,class:'form-control text_field'} %>
        </div>
@@ -22,7 +22,7 @@
   
   <p>
     <div class:"control-group">
-    <%= f.label "Ingrese el dinero ofrecido por el producto (minimo $1):",class:'control-label' %><br>
+    <%= f.label "Ingrese el dinero ofrecido por el producto (mínimo $1):",class:'control-label' %><br>
        <div class:"controls">
          $<%= f.text_field :dinero, value: "1",class:'text_field' %>
        </div>
@@ -30,7 +30,7 @@
   </p>
 
   <p>
-    <div>Datos de la tarjeta de credito</div>
+    <div>Datos de la tarjeta de crédito</div>
     <ul>
         <%= f.fields_for :credit_card, @current_user.credit_card do |c| %>
         <div class="row center-block">

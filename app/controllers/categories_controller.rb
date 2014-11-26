@@ -1,13 +1,9 @@
 class CategoriesController < ApplicationController
 
-  	before_action :new, only:[:create];
-  	before_action :get_category, only:[:show, :edit, :update, :destroy];
+	before_action :new, only:[:create];
+	before_action :get_category, only:[:show, :edit, :update, :destroy];
 
-  	def get_category
-		@category = Category.find(params[:id])
-	end
-
-  	def get_category
+	def get_category
 		@category = Category.find(params[:id])
 	end
 
@@ -16,6 +12,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
+		@productos = @category.productos.order(sort_column + ' ' + sort_direction).paginate(page: params[:page], :per_page => 3)
 	end
 
 	def new
@@ -24,7 +21,7 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.create(category_params)
-  		redirect_to categories_path
+		redirect_to categories_path
 	end
 
 	def edit
@@ -37,12 +34,20 @@ class CategoriesController < ApplicationController
 
 	def destroy
 		@category.destroy
-  		redirect_to categories_path
+		redirect_to categories_path
 	end
 
 	private
 		def category_params
 			params.require(:category).permit([:name])
+		end
+
+		def sort_column
+			params[:sort] || "titulo"
+		end
+
+		def sort_direction
+			params[:direction] || "asc"
 		end
 
 end

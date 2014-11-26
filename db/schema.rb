@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125125105) do
+ActiveRecord::Schema.define(version: 20141126130345) do
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20141125125105) do
   add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id"
 
   create_table "domiciles", force: true do |t|
-    t.integer  "number"
+    t.string  "number"
     t.string   "street"
     t.string   "city"
     t.string   "province"
@@ -123,8 +123,8 @@ ActiveRecord::Schema.define(version: 20141125125105) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.integer  "DNI"
-    t.integer  "phone"
+    t.string   "DNI"
+    t.string   "phone"
     t.date     "birthDate"
     t.datetime "created_at"
     t.datetime "updated_at"

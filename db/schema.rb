@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20141126130345) do
   end
 
   create_table "credit_cards", force: true do |t|
-    t.integer  "number"
+    t.string  "number"
     t.string   "owner"
     t.date     "expireDate"
     t.integer  "securityCode"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20141126130345) do
   add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id"
 
   create_table "domiciles", force: true do |t|
-    t.string  "number"
+    t.integer  "number"
     t.string   "street"
     t.string   "city"
     t.string   "province"

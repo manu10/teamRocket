@@ -20,6 +20,10 @@
     height: 30px;
 } 
 
+
+#btn-profile{
+  border-bottom: thick double #eaeaea; 
+}
 /* FOOTER */
 
 footer {
@@ -201,4 +205,23 @@ font-size: 1.5em;
 }
 #logged{
   color:#C0C0C0;
+  font-size: 0.75em;
+}
+
+img-circle:hover, img-circle:active {background: red;}
+
+
+#ask-icon{
+  height: 25px;
+    width: 25px;
+    background-color: #297ACC;
+}
+
+.label-subasta {
+    font-size: 1.2em;
+    height: 15px;
+}
+.form-subasta {
+    font-size: 1.0em;
+    height: 30px;
 }

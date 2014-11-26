@@ -103,28 +103,28 @@
    <%= f.fields_for :credit_card, resource.credit_card do |c| %><div class="row center-block">
     <div class="center-block col-md-4">  
     <%= c.label "Propietario", class:"label-creditcard" %>
-    <%= c.text_field :owner, autofocus: true , :required => "required", class:"form-control form-creditcard" %>
+    <%= c.text_field :owner, autofocus: true ,  class:"form-control form-creditcard" %>
     </div>
     </div>
 
     <div class="row center-block">
     <div class="center-block col-md-4">  
     <%= c.label "Numero", class:"label-creditcard" %>
-    <%= c.text_field :number, autofocus: true , :required => "required", class:"form-control form-creditcard" %>
+    <%= c.text_field :number, autofocus: true , class:"form-control form-creditcard" %>
     </div>
     </div>
 
     <div class="row center-block">
     <div class="center-block col-md-4">  
     <%= c.label "Vencimiento", class:"label-creditcard" %><br>
-    <%= c.date_select :expireDate, :order => [:month, :year], :required => "required", autofocus: true,start_year:Date.today.year,end_year:Date.today.year+5, class:"form-control" %>
+    <%= c.date_select :expireDate, :order => [:month, :year],  autofocus: true,start_year:Date.today.year,end_year:Date.today.year+5, class:"form-control" %>
     </div>
     </div>
 
     <div class="row center-block">
     <div class="center-block col-md-1">  
     <%= c.label "Codigo de seguridad", class:"label-creditcard" %><br>
-    <%= c.text_field :securityCode, autofocus: true, :required => "required", class:"form-control" %><br>
+    <%= c.text_field :securityCode, autofocus: true,  class:"form-control" %><br>
     
     </div>
     </div>

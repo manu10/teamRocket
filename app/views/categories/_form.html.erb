@@ -1,0 +1,11 @@
+<%= form_for @category do |f| %>
+
+<div class="row">
+	<div class="col-md-6">
+		<h4>Nombre de la categoría:<h4>
+		<%= f.text_field :name, class: 'form-control', autofocus: true, :required => "required", label: 'Categoría' %>
+		<%= f.submit "Guardar categoría", class: 'btn btn-primary' %>
+	</div>
+</div>
+
+<% end %>

@@ -7,14 +7,22 @@
          <% end %>
       </ul>
    <% end %>
-<p>
-    <%= f.label "Motivo de su oferta" %><br>
-    <%= f.text_area :motivacion , {value:@ofert.motivacion,cols:80,rows:5,disabled:"disabled"} %>
-    <%= f.label "Dinero ofrecido (mínimo $1):" %><br>
-    $<%= f.text_field :dinero, value: @ofert.dinero %>
+    <p>
+      <%= f.label "Motivo de su oferta:" %><br>
+      <span class="help-block">(Este campo no se puede editar)</span>
+      <%= f.text_area :motivacion , {value:@ofert.motivacion,cols:80,rows:5,disabled:"disabled"} %>
+    </p>
+
+    <p>
+      <%= f.label "Dinero ofrecido (mínimo $1):" %><br>
+      $<%= f.text_field :dinero, value: @ofert.dinero %>
+    </p>
+
   <p>
     <%= f.submit "Finalizar", class:'btn btn-primary' %>
-    <%= link_to "Cancelar", oferts_path(user_id:current_user.id),class:'btn btn-secondary' %>
   </p>
+
+    <%= link_to "Cancelar", oferts_path(user_id:current_user.id),class:'btn btn-secondary' %>
+  
   
  <% end %>

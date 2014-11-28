@@ -1,4 +1,4 @@
-<h1>Tus ofertas</h1>
+<h1>Mis ofertas</h1>
 <% if @oferts.size()== 0 %>
 	<h2> No tienes ninguna oferta vigente </h2>
 <% else %> 
@@ -11,6 +11,7 @@
 			<th> Editar monto </th>
 		</tr>
 	<% @oferts.all.each do |of| %>
+	<% if of.producto.vencimiento>Date.today %>
 	<tr>
 		<td> <%= link_to of.producto do %>
               <%= image_tag of.producto.UrlImage, title: of.producto.titulo, class:'img-thumbnail test', alt:'SIN IMAGEN', style:'max-width: 50px; max-height: 50px;'%>
@@ -19,7 +20,8 @@
 		<div text-align:"center"><td> $<%= of.dinero %></td>
 		<td><%= link_to "Modificar valor",edit_ofert_path(of), class:'btn btn-primary' %></td>
 	</tr>
-	<% end %>
+	<% end %><!-- del if  -->
+	<% end %><!-- del each -->
 	</table>
 	</div>
 <% end %>

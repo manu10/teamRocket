@@ -35,9 +35,9 @@ LO SIGUIENTE ES SOLO PARA CONTROL
   
 <% if user_signed_in? %>
 	<% if current_user.id==@producto.user_id %>
-		<%= link_to 'Editar producto', edit_producto_path(@producto) %>
+		<%= link_to 'Editar producto', edit_producto_path(@producto), class: 'btn btn-default' %>
     <%= link_to 'Ver ofertas', [@producto],
-        method: :indexOferts %>
+        method: :indexOferts, class: 'btn btn-info' %>
     <%else %>  
 		    <%=link_to 'Realizar oferta', new_producto_ofert_path(@producto), class: 'btn btn-primary' %> 
 	<% end %>

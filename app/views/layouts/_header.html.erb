@@ -1,25 +1,25 @@
  <header>
       <nav class="navbar navbar-fixed-top  navbar-inverse" role="navigation" id= "header" >
           
-          <!-- El logotipo y el icono que despliega el menú se agrupan
-               para mostrarlos mejor en los dispositivos móviles -->
+          <!-- El logotipo y el icono que despliega el menu se agrupan
+               para mostrarlos mejor en los dispositivos moviles -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target=".navbar-ex1-collapse">
-              <span class="sr-only">Desplegar navegación</span>
+              <span class="sr-only">Desplegar navegacion</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
          <%= link_to root_path, class: 'navbar-brand center-block' do %>
-                    <%= image_tag "logo.png", title: "Hecho con el corazón", class: "img-thumbnail"%>
+                    <%= image_tag "logo.png", title: "Hecho con el corazon", class: "img-thumbnail"%>
                     <!--BestNid-->
                   <% end %></a>
 
 
           </div>
          
-          <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+          <!-- Agrupar los enlaces de navegacion, los formularios y cualquier
                otro elemento que se pueda ocultar al minimizar la barra -->
           <div class="collapse navbar-collapse navbar-ex1-collapse ">
             <ul class="nav navbar-nav">
@@ -42,12 +42,12 @@
             <ul class="nav navbar-nav navbar-right">
                <% if user_signed_in? %>
           
-          <div class="nav navbar-nav navbar-right"><li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li><br></div>
+          <div class="nav navbar-nav navbar-right"><li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li><br></div>
           <div class="nav navbar-nav navbar-right"> <li><%= link_to 'Ver Perfil', user_show_path %> </li></div>
 
         <% else %>
           <li><%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> </li>
-          <li><%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %></li>
+          <li><%= link_to "Iniciar sesion", new_user_session_path, :class => 'navbar-link'  %></li>
         <% end %>
              
             </ul>

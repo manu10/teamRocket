@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'statistic/generate_statistics'
+  
+  post 'statistic/generate_statistics'
+
+  get 'statistic/index'
+
   resources :answers
   get 'answers/new'
 

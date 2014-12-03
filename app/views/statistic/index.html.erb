@@ -1,0 +1,10 @@
+<h1>Statistic#index</h1>
+<p>Find me in app/views/statistic/index.html.erb</p>
+<%= form_tag(controller: "statistic",action: "generate_statistics" ) do %>
+  <%= label_tag("Desde") %>
+  <%= select_date(Date.today-1.year, prefix: :start_date, order: [:day, :month, :year ]) %>
+  <%= label_tag("Hasta") %>
+  <%= select_date(Date.today, prefix: :end_date, order: [:day, :month, :year]) %>
+  <%= select_tag(:statistic_type, options_for_select([['Usuarios', 1], ['Recaudacion', 2]])) %>
+  <%= submit_tag("Ver estadisticas!") %>
+<% end %>

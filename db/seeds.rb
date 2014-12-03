@@ -21,7 +21,6 @@ Producto.find_or_create_by( category_id: "1",  titulo: 'Kriptonita',descripcion:
 Producto.find_or_create_by( category_id: "1",  titulo: 'Aceite y Vinagre',descripcion: '200ml de aceite y 300ml de vinagre. No incluye fascos',vencimiento:Date.today+20.days, UrlImage: 'http://40.media.tumblr.com/f92d39b2c62cf2bc5398797db35ce37d/tumblr_nbsejfmSt21tlipbuo1_400.jpg')
 Producto.find_or_create_by( user_id: "1", category_id: "1",  titulo: "ojota", descripcion: "Una lindas hawaianas",vencimiento: Date.today+15.days, UrlImage:"http://www.juvenciasport.com.ar/wp-content/uploads/Brasil-azul.jpg")
 
-
 llama = Producto.where(titulo: "Llama").first
 kript = Producto.where(titulo: "Kriptonita").first
 esp = Producto.where(titulo: "Espejo").first
@@ -52,3 +51,4 @@ end
 User.create( role_id:2, name:"Pepe Argento ", DNI:23565777 , password_confirmation:"administrador", email:"bestnidproject@gmail.com",password:"administrador", phone: 02345615222, birthDate: '1990-11-11')
  admin_id=User.where(email:"bestnidproject@gmail.com").first.id
 Domicile.find_or_create_by(country:"Argentina",province:"Buenos Aires",city:"La Plata",street:"44",number:"44", user_id:admin_id)
+CreditCard.find_or_create_by(number:1234567890098765,securityCode:123,expireDate:Date.today+1.year,user_id:admin_id)

@@ -2,10 +2,12 @@
     <% @usuarios.each do |usuario| %> 
       <div class="row container subasta" >
       <div class="row">
-          <dt>nombre: </dt>
+          <dt>Nombre: </dt>
           <dd><%= usuario.name %></dd>
+          <dt>E-mail: </dt>
+          <dd><%= usuario.email %></dd>
           <dt>Registrado: </dt>
-          <dd><%= localize usuario.created_at, format: :long %></dd>
+          <dd>El dia <%= localize usuario.created_at, format: :long %>hs</dd>
 
       </div><!-- Cierre row botones -->
     </div><!-- Cierre div de continer subasta  -->

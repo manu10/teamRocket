@@ -35,26 +35,26 @@
 
         <div class="row center-block">
           <div class="center-block col-md-4">  
-             <%= label_tag "Propietario"%>
+             <%= label_tag "Propietario(*)"%>
              <%= text_field_tag :owner, current_user.credit_card.owner, autofocus: true , required:"required", class:"form-control form-creditcard" %>
           </div>
         </div>
 
         <div class="row center-block">
             <div class="center-block col-md-4">  
-                <%= label_tag "Numero" %>
+                <%= label_tag "Numero(*)" %>
                 <%= text_field_tag :number, current_user.credit_card.number, autofocus: true, required:"required" , class:"form-control form-creditcard" %>
             </div>
         </div>
         <div class="row center-block">
             <div class="center-block col-md-4">  
-                <%= label_tag "Vencimiento"%><br>
+                <%= label_tag "Vencimiento(*)"%><br>
                 <%= select_date current_user.credit_card.expireDate,  discard_day: true, start_year:Date.today.year,end_year:Date.today.year+5,required:"required", class:"form-control", name: 'expireDate' %>
             </div>
         </div>
         <div class="row center-block">
            <div class="center-block col-md-1">  
-           <%= label_tag "Codigo de seguridad"%><br>
+           <%= label_tag "Codigo de seguridad(*)"%><br>
            <%= text_field_tag :securityCode, current_user.credit_card.securityCode, autofocus: true, required:"required", class:"form-control" %>
            </div>
         </div>

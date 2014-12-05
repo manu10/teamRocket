@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126130345) do
+ActiveRecord::Schema.define(version: 20141205202321) do
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20141126130345) do
     t.integer  "producto_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "sold"
   end
 
   add_index "oferts", ["producto_id"], name: "index_oferts_on_producto_id"

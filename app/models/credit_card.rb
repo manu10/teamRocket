@@ -17,8 +17,10 @@ class CreditCard < ActiveRecord::Base
 validate :expiration_date_cannot_be_in_the_past
  
   def expiration_date_cannot_be_in_the_past
-    if expireDate < Date.today
-      errors.add(:expireDate, "Su tarjeta esta vencida")
-    end
+    if expireDate!=nil
+      if expireDate < Date.today
+        errors.add(:expireDate, "Su tarjeta esta vencida")
+      end
+    end 
   end
 end

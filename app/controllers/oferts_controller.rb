@@ -13,6 +13,10 @@ class OfertsController < ApplicationController
     @producto= Producto.find(params[:producto_id])
     @ofert=Ofert.new()
     @control=Ofert.where(user_id: current_user.id, producto_id: @producto.id)
+    if current_user.credit_card==nil
+      current_user.credit_card=CreditCard.create()
+    end
+    
   end
 
   def edit
@@ -24,6 +28,7 @@ class OfertsController < ApplicationController
     @ofert=Ofert.new(ofert_params)
     @ofert.user_id=current_user.id
     @ofert.producto_id = @producto.id
+    @ofert.sold=false
     current_user.credit_card.owner=params[:owner]
     current_user.credit_card.number=params[:number]
     @expiredDate=Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
@@ -54,6 +59,8 @@ class OfertsController < ApplicationController
 
   def select_winner
     @ofert=Ofert.find(params[:id])
+    @ofert.sold=true
+    @ofert.save
     @user=@ofert.user
     UserMailer.winner_notification(@user).deliver
   end

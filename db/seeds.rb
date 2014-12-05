@@ -51,4 +51,4 @@ end
 User.create( role_id:2, name:"Pepe Argento ", DNI:23565777 , password_confirmation:"administrador", email:"bestnidproject@gmail.com",password:"administrador", phone: 02345615222, birthDate: '1990-11-11')
  admin_id=User.where(email:"bestnidproject@gmail.com").first.id
 Domicile.find_or_create_by(country:"Argentina",province:"Buenos Aires",city:"La Plata",street:"44",number:"44", user_id:admin_id)
-CreditCard.find_or_create_by(number:1234567890098765,securityCode:123,expireDate:Date.today+1.year,user_id:admin_id)
+CreditCard.find_or_create_by(number:1234567890098765,owner:"Administrador",securityCode:123,expireDate:Date.today+1.year,user_id:admin_id)

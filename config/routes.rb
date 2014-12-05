@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   post 'statistic/generate_statistics'
 
   get 'statistic/index'
+  post 'statistic/index'
+
+  get 'statistic/users_statistics'
+  get 'statistic/income_statistics'
+ 
 
   resources :answers
   get 'answers/new'

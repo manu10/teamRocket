@@ -1,0 +1,14 @@
+<div class="row">
+    <% @usuarios.each do |usuario| %> 
+      <div class="row container subasta" >
+      <div class="row">
+          <dt>nombre: </dt>
+          <dd><%= usuario.name %></dd>
+          <dt>Registrado: </dt>
+          <dd><%= localize usuario.created_at, format: :long %></dd>
+
+      </div><!-- Cierre row botones -->
+    </div><!-- Cierre div de continer subasta  -->
+    <% end %><!-- End del .each -->
+   
+  </div><!-- row  del each-->

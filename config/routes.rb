@@ -39,7 +39,10 @@ Rails.application.routes.draw do
 
   get 'oferts/destroy'
 
-resources :credit_cards
+  resources :money
+    get 'money/create'
+
+  resources :credit_cards
   get 'credit_cards/new'
 
   get 'credit_cards/create'

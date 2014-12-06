@@ -28,7 +28,6 @@ class OfertsController < ApplicationController
     @ofert=Ofert.new(ofert_params)
     @ofert.user_id=current_user.id
     @ofert.producto_id = @producto.id
-    @ofert.sold=false
     current_user.credit_card.owner=params[:owner]
     current_user.credit_card.number=params[:number]
     @expiredDate=Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
@@ -59,10 +58,11 @@ class OfertsController < ApplicationController
 
   def select_winner
     @ofert=Ofert.find(params[:id])
-    @ofert.sold=true
-    @ofert.save
+    Money.create(cash:@ofert.dinero )
     @user=@ofert.user
-    UserMailer.winner_notification(@user).deliver
+    UserMailer.info_winner(@user,@ofert).deliver
+    UserMailer.you_win(@user,@ofert).deliver
+    Producto.find(@ofert.producto_id).destroy()
   end
 
   private

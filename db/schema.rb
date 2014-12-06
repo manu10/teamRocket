@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205202321) do
+ActiveRecord::Schema.define(version: 20141206150638) do
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -78,6 +78,12 @@ ActiveRecord::Schema.define(version: 20141205202321) do
   end
 
   add_index "domiciles", ["user_id"], name: "index_domiciles_on_user_id"
+
+  create_table "money", force: true do |t|
+    t.integer  "cash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oferts", force: true do |t|
     t.text     "motivacion"

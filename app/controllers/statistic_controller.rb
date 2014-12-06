@@ -14,10 +14,10 @@ class StatisticController < ApplicationController
 		if @statistic_type == "1" #Si eligio usuarios
 			@usuarios=User.where("created_at >= :start_date AND created_at <= :end_date",{:start_date => @start_date, :end_date => @end_date})
 			elsif @statistic_type == "2"
-				@oferts=Ofert.where("created_at >= :start_date AND created_at <= :end_date AND sold == :true",{:start_date => @start_date, :end_date => @end_date, :true => true})
+				@moneys=Money.where("created_at >= :start_date AND created_at <= :end_date",{:start_date => @start_date, :end_date => @end_date, :true => true})
 				@recaudacion=0
-				@oferts.each do |o|
-					@recaudacion=@recaudacion+o.dinero
+				@moneys.each do |m|
+					@recaudacion=@recaudacion+m.cash
 				end
 				@recaudacion=@recaudacion*0.3
 		end
@@ -25,3 +25,4 @@ class StatisticController < ApplicationController
 	end
   end
 end
+

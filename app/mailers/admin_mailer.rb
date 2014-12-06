@@ -1,6 +1,8 @@
 class AdminMailer < ActionMailer::Base
+	default to:'bestnidproject@gmail.com', from:'bestnidproject@gmail.com'
   def contact_with_admin(contacto)
   	@contacto=contacto
-    mail(:to => 'bestnidproject@gmail.com', :subject => @contacto.motivo, :from => 'bestnidproject@gmail.com' )
+    mail(:subject => @contacto.motivo)
   end
 end
+

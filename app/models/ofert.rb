@@ -5,6 +5,6 @@ class Ofert < ActiveRecord::Base
   validates :user_id , presence: true
   validates :producto_id, presence: true
   validates :motivacion,presence:true,length:{minimum:10}
-  validates :dinero,presence:true,numericality:{only_integer:true , greater_than_or_equal_to:1}
+  validates :dinero,presence:true,numericality:{ greater_than_or_equal_to:1}
 
 end

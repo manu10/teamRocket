@@ -15,13 +15,6 @@
   <%= @producto.vencimiento.strftime("%d de %B de %Y") %>
 </p>
 
-LO SIGUIENTE ES SOLO PARA CONTROL
-<!-- LO SIGUIENTE ES SOLO PARA CONTROL -->
-<p>
-  <strong>Usuario:</strong>
-  <%= @producto.user_id %>
-</p>
-
 <p>
 <h2>Comentarios</h2>
 <%= render @producto.comments %>

@@ -37,7 +37,7 @@ class OfertsController < ApplicationController
       redirect_to @producto,notice:"Oferta Realizada exitosamente"
     else
       @control=Ofert.where(user_id: current_user.id, producto_id: @producto.id)
-      render "new", notice: "Se han cargado mal los datos de la tarjeta"
+      render "new"
     end
   end
 

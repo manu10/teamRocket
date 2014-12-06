@@ -45,6 +45,7 @@
     </div><!-- row -->
   <div class="row">
     <% @productos.each do |producto| %> 
+    <% if producto.vencimiento > Date.today %>
       <div class="row container subasta" >
       <div class="row">
         <dt id="titulo"><%= producto.titulo %> </dt>
@@ -75,6 +76,7 @@
             <% end %><!-- End del if user_signed_in? and current_user.id=producto.user_id -->
       </div><!-- Cierre row botones -->
     </div><!-- Cierre div de continer subasta  -->
+    <% end %><!-- End del if producto.vencimiento > Date.today -->
     <% end %><!-- End del .each -->
    
   </div><!-- row  del each-->

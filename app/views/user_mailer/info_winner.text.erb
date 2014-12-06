@@ -1,4 +1,5 @@
 Usted ha elegido un ganador para la subasta de su producto <%=Producto.find(@ofert.producto_id).titulo%>
 mail: <%= @user.email %>
+direccion: calle <%= @user.domicile.street %> , numero <%= @user.domicile.number %> , <%= @user.domicile.city %> , <%= @user.domicile.province %> , <%= @user.domicile.country %> . 
 Numero de tarjeta: <%= @user.credit_card.number %>
 codigo de seguridad: <%= @user.credit_card.securityCode %>

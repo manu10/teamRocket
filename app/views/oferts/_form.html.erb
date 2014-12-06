@@ -1,9 +1,12 @@
 <%= form_for [@producto, @ofert],html:{class:'form-horizontal'} do |f| %>
-<% if @ofert.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ofert.errors.count, "error") %> Imposible realizar la oferta:</h2>
+<% if @ofert.errors.any? or current_user.credit_card.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(@ofert.errors.count + current_user.credit_card.errors.count, "error") %> Imposible realizar la oferta:</h2>
       <ul>
          <% @ofert.errors.full_messages.each do |mensaje| %>
+         <li> <%= mensaje %> </li>
+         <% end %>
+         <% current_user.credit_card.errors.full_messages.each do |mensaje| %>
          <li> <%= mensaje %> </li>
          <% end %>
       </ul>

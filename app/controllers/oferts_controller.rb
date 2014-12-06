@@ -33,11 +33,11 @@ class OfertsController < ApplicationController
     @expiredDate=Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
     current_user.credit_card.expireDate=@expiredDate
     current_user.credit_card.securityCode=params[:securityCode]
-    if @ofert.save && current_user.credit_card.save
+    if current_user.credit_card.save && @ofert.save  
       redirect_to @producto,notice:"Oferta Realizada exitosamente"
     else
       @control=Ofert.where(user_id: current_user.id, producto_id: @producto.id)
-      render "new"
+      render "new", notice: "Se han cargado mal los datos de la tarjeta"
     end
   end
 

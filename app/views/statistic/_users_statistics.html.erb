@@ -12,5 +12,5 @@
       </div><!-- Cierre row botones -->
     </div><!-- Cierre div de continer subasta  -->
     <% end %><!-- End del .each -->
-   
+   <%=@usuarios.count%> usuarios se registraron entre <%=  localize @start_date, format: :long %> y <%= localize @end_date, format: :long%>
   </div><!-- row  del each-->

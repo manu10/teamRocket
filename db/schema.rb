@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206150638) do
+ActiveRecord::Schema.define(version: 20141210184700) do
 
   create_table "add_column_to_users", force: true do |t|
     t.string   "name"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 20141206150638) do
     t.integer  "cash"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user"
+    t.string   "product"
   end
 
   create_table "oferts", force: true do |t|

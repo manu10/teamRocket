@@ -58,7 +58,8 @@
         <div class="row center-block">
            <div class="center-block col-md-1">  
            <%= label_tag "Codigo de seguridad(*)"%><br>
-           <%= text_field_tag :securityCode, current_user.credit_card.securityCode, autofocus: true, required:"required", class:"form-control" %>
+           <%= password_field_tag  :securityCode, current_user.credit_card.securityCode,required:"required" ,pattern:"(?=.*[0-9]).{3,3}" ,class:"form-control" %><!-- consultar lo de si el codigo va oculto o si no se debe editar ni crear al crear -->
+
            </div>
         </div>
      </ul>      

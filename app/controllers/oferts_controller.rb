@@ -32,7 +32,7 @@ class OfertsController < ApplicationController
     current_user.credit_card.number=params[:number]
     @expiredDate=Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
     current_user.credit_card.expireDate=@expiredDate
-    current_user.credit_card.securityCode=params[:securityCode]
+
     if current_user.credit_card.save
       if @ofert.save
         redirect_to @producto,notice:"Oferta Realizada exitosamente"
@@ -63,7 +63,9 @@ class OfertsController < ApplicationController
 
   def select_winner
     @ofert=Ofert.find(params[:id])
-    Money.create(cash:@ofert.dinero )
+    @producto=Producto.find(@ofert.producto_id)
+    @user=User.find(@ofert.user_id)
+    Money.create(cash:@ofert.dinero,user:@user.name,product:@producto.titulo )
     @user=@ofert.user
     UserMailer.info_winner(@user,@ofert).deliver
     UserMailer.you_win(@user,@ofert).deliver

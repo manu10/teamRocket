@@ -6,6 +6,6 @@ class MoneyController < ApplicationController
 
   private
     def ofert_params
-      params.require(:money).permit(:cash)
+      params.require(:money).permit(:cash,:user,:product)
     end
 end

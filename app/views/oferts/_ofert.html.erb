@@ -1,7 +1,7 @@
 <tr>
     <td ><%=truncate(ofert.motivacion,length:80) {link_to "Ver mas...", ofert,{style:'color:#B31B1B'}}%></td>
     <td >
-    	<%= button_to "Ganador!!!", [ofert] , method: :select_winner , class:"btn btn-warning", disabled:(@producto.vencimiento > Date.today) %>
+    	<%= button_to "Ganador!!!", [ofert] , method: :select_winner , data: { confirm: '¿Estas seguro?, (Una vez elegido se eliminará el producto)' }, class:"btn btn-warning", disabled:(@producto.vencimiento > Date.today) %>
 	</td>
 </tr>
 

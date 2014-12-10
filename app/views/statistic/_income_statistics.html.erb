@@ -1,1 +1,18 @@
+<div class="row">
+    <% @moneys.each do |v| %> 
+      <div class="row container subasta" >
+      <div class="row">
+          <dt>usuario: </dt>
+          <dd><%= v.user %></dd>
+          <dt>producto: </dt>
+          <dd><%= v.product %></dd>
+          <dt>Ganancia: </dt>
+          <dd><%= 0.3 *v.cash %></dd>
+
+      </div><!-- Cierre row botones -->
+    </div><!-- Cierre div de continer subasta  -->
+    <% end %><!-- End del .each -->
+
+
 La recaudacion es de $<%=@recaudacion%>
+</div>

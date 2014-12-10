@@ -12,7 +12,7 @@ class StatisticController < ApplicationController
 	
 		
 		if @statistic_type == "1" #Si eligio usuarios
-			@usuarios=User.where("created_at >= :start_date AND created_at <= :end_date",{:start_date => @start_date, :end_date => @end_date})
+			@usuarios=User.where("created_at >= :start_date AND created_at <= :end_date",{:start_date => @start_date, :end_date => @end_date}).order("created_at desc")
 			elsif @statistic_type == "2"
 				@moneys=Money.where("created_at >= :start_date AND created_at <= :end_date",{:start_date => @start_date, :end_date => @end_date, :true => true})
 				@recaudacion=0

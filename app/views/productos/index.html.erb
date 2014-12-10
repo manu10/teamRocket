@@ -13,8 +13,8 @@
         <li><%= link_to 'Alfabeticamente', sort: "titulo", direction:"asc" %></li>
         <li><%= link_to 'Mas recientes', sort: "created_at", direction:"desc" %></li>
         <li><%= link_to 'Mas antiguas', sort: "created_at", direction:"asc" %></li>
-        <li><%= link_to 'A punto de expirar', sort: "vencimiento", direction:"desc" %></li>
-        <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"asc" %></li>
+        <li><%= link_to 'A punto de expirar', sort: "vencimiento", direction:"asc" %></li>
+        <li><%= link_to 'Mucho tiempo para que caduquen', sort: "vencimiento", direction:"desc" %></li>
       </ul>
     </div><!-- Btn-group -->
 <!-- <div class="btn-group">
@@ -45,7 +45,6 @@
     </div><!-- row -->
   <div class="row">
     <% @productos.each do |producto| %> 
-    <% if producto.vencimiento > Date.today %>
       <div class="row container subasta" >
       <div class="row">
         <dt id="titulo"><%= producto.titulo %> </dt>
@@ -76,7 +75,6 @@
             <% end %><!-- End del if user_signed_in? and current_user.id=producto.user_id -->
       </div><!-- Cierre row botones -->
     </div><!-- Cierre div de continer subasta  -->
-    <% end %><!-- End del if producto.vencimiento > Date.today -->
     <% end %><!-- End del .each -->
    
   </div><!-- row  del each-->

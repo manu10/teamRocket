@@ -1,5 +1,3 @@
-<h1>Statistic#index</h1>
-<p>Find me in app/views/statistic/index.html.erb</p>
 <%= form_tag(controller: "statistic",action: "index" ) do %>
   <%= label_tag("Desde") %>
   <%= select_date(@start_date, prefix: :start_date, order: [:day, :month, :year ], start_year: Date.today.year-5, end_year: Date.today.year) %>

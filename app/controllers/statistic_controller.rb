@@ -16,10 +16,6 @@ class StatisticController < ApplicationController
 			elsif @statistic_type == "2"
 				@moneys=Money.where("created_at >= :start_date AND created_at <= :end_date",{:start_date => @start_date, :end_date => @end_date, :true => true})
 				@recaudacion=0
-				@moneys.each do |m|
-					@recaudacion=@recaudacion+m.cash
-				end
-				@recaudacion=@recaudacion*0.3
 		end
 
 	end

@@ -1,7 +1,8 @@
 <div class="row">
-    <% @moneys.each do |v| %> 
+        <% @moneys.each do |v| %> 
       <div class="row container subasta" >
       <div class="row">
+		<%@recaudacion=@recaudacion+v.cash%>
           <dt>usuario: </dt>
           <dd><%= v.user %></dd>
           <dt>producto: </dt>
@@ -13,6 +14,7 @@
     </div><!-- Cierre div de continer subasta  -->
     <% end %><!-- End del .each -->
 
+	<%@recaudacion=@recaudacion*0.3%>
 
 La recaudacion es de $<%=@recaudacion%>
 </div>

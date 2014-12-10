@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
-		@productos = @category.productos.order(sort_column + ' ' + sort_direction).paginate(page: params[:page], :per_page => 3)
+		@productos = @category.productos.where("vencimiento >= :today ",{:today => Date.today}).order(sort_column + ' ' + sort_direction).paginate(page: params[:page], :per_page => 3)
 	end
 
 	def new

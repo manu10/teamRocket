@@ -4,10 +4,12 @@ class ProductosController < ApplicationController
   def index
 
      if params[:search]
-    @productos = Producto.search(params[:search]).order("created_at DESC").paginate(page: params[:page], :per_page => 3)
+    @productos = Producto.where("vencimiento >= :today ",{:today => Date.today}).search(params[:search]).order("created_at DESC").paginate(page: params[:page], :per_page => 3)
   else
 
-    @productos=Producto.order(sort_column + ' ' + sort_direction).paginate(page: params[:page], :per_page => 3)
+    @productos=Producto.where("vencimiento >= :today ",{:today => Date.today}).order(sort_column + ' ' + sort_direction).paginate(page: params[:page], :per_page => 3)
+
+
 
   end
 

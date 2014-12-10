@@ -13,5 +13,10 @@ class UserMailer < ActionMailer::Base
     @producto=Producto.find(@ofert.producto_id)
   	mail(to:User.find(@producto.user_id).email ,subject:'Datos de contacto del ganador')
   end
-  
+  def password_reset(user, password)
+    @user = user
+    @password = password
+    mail(:to => user.email,
+         :subject => 'Password Reset Notification')
+  end
 end

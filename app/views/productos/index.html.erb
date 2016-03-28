@@ -1,5 +1,8 @@
 <% if @productos.size==0 %>
   <h1>No se encontraron subastas</h1>
+  <% if user_signed_in? %>
+      <%= link_to 'SUBASTAR!', new_producto_path, class:"btn btn-primary pull-right" %>
+    <% end %>
 <% else %>
   <h1>Subastas Vigentes</h1>
   <div class="row" id="btn-profile">
